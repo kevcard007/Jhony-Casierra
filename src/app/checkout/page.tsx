@@ -148,10 +148,10 @@ export default function CheckoutPage() {
   if (items.length === 0) {
     return (
       <div className="container mx-auto px-4 py-12 text-center">
-        <h1 className="text-2xl font-serif mb-4">Your cart is empty</h1>
-        <p className="mb-6">Add some items to your cart before proceeding to checkout.</p>
+        <h1 className="text-2xl font-serif mb-4">Tu Carrito esta Vacio</h1>
+        <p className="mb-6">Agrega algunos Articulos Al Carrito Antes de Proceder con la Compra.</p>
         <Button asChild>
-          <Link href="/collections">Browse Collections</Link>
+          <Link href="/collections">Buscar Colecciones</Link>
         </Button>
       </div>
     );
@@ -159,11 +159,11 @@ export default function CheckoutPage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-2xl font-serif mb-6">Checkout</h1>
+      <h1 className="text-2xl font-serif mb-6">Pagar</h1>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div>
-          <h2 className="text-xl font-medium mb-4">Order Summary</h2>
+          <h2 className="text-xl font-medium mb-4">Resumen del Pedido</h2>
           <div className="space-y-4 mb-6">
             {items.map((item) => (
               <div key={item.id} className="flex space-x-4">
@@ -182,7 +182,7 @@ export default function CheckoutPage() {
                     <span className="text-gray-600">{item.price}</span>
                   </div>
                   <div className="text-sm text-gray-600 mt-1">
-                    Quantity: {item.quantity}
+                    Cantidad: {item.quantity}
                   </div>
                 </div>
               </div>
@@ -195,8 +195,8 @@ export default function CheckoutPage() {
               <span>{formatPrice(calculateTotal())}</span>
             </div>
             <div className="flex justify-between">
-              <span>Shipping</span>
-              <span>Free</span>
+              <span>Envio</span>
+              <span>Gratis</span>
             </div>
             <Separator className="my-2" />
             <div className="flex justify-between font-medium text-lg">
@@ -207,7 +207,7 @@ export default function CheckoutPage() {
         </div>
 
         <div>
-          <h2 className="text-xl font-medium mb-4">Payment Method</h2>
+          <h2 className="text-xl font-medium mb-4">Metodo de Pago</h2>
           {isLoading ? (
             <div className="flex justify-center items-center p-12">
               <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-black"></div>

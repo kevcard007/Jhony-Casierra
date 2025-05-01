@@ -84,19 +84,18 @@ export default function ArtworkPage({ params }: ArtworkPageProps) {
 
           <div className="space-y-4">
             <div>
-              <h2 className="font-medium text-lg mb-2">Details</h2>
+              <h2 className="font-medium text-lg mb-2">Detalles</h2>
               <ul className="space-y-2 text-sm">
-                <li><span className="font-medium">Size:</span> {artwork.size}</li>
-                <li><span className="font-medium">Type:</span> {artwork.type}</li>
-                <li><span className="font-medium">Edition:</span> Original</li>
-                <li><span className="font-medium">Subject:</span> Cityscape</li>
+                <li><span className="font-medium">Tamaño:</span> {artwork.size}</li>
+                <li><span className="font-medium">Tipo:</span> {artwork.type}</li>
+                <li><span className="font-medium">Edición:</span> Original</li>
+                <li><span className="font-medium">Tema:</span> Arte Colonial</li>
               </ul>
             </div>
 
             <p className="text-sm">
-              This unique {artwork.type?.toLowerCase()} piece by Paul Kenton captures the
-              energy and atmosphere of the urban landscape with dynamic brushstrokes and vibrant colors.
-              Each piece is personally signed by the artist.
+              Esta obra única {artwork.type?.toLowerCase()} de Jhony Casierra captura la energía y la atmósfera del paisaje urbano con pinceladas dinámicas y colores vibrantes.
+              Cada pieza está firmada personalmente por el artista.
             </p>
 
             <div className="flex flex-col space-y-4 mt-4">
@@ -108,22 +107,18 @@ export default function ArtworkPage({ params }: ArtworkPageProps) {
 
       {/* Description Section */}
       <div className="mt-12 max-w-4xl mx-auto">
-        <h2 className="text-xl md:text-2xl font-serif mb-4">About This Artwork</h2>
+        <h2 className="text-xl md:text-2xl font-serif mb-4">Acerca de esta obra de arte</h2>
         <div className="prose max-w-none">
           <p>
-            Paul Kenton's distinctive style captures the mood and atmosphere of urban landscapes.
-            This particular piece, "{artwork.title}", showcases his ability to convey the energy
-            and vibrancy of city life through his unique approach to contemporary cityscape painting.
+            El estilo distintivo de Paul Kenton captura la atmósfera y el estado de ánimo de los paisajes urbanos.
+            Esta pieza en particular,  "{artwork.title}", demuestra su capacidad para transmitir la energía y la vitalidad de la vida urbana a través de su singular enfoque en la pintura contemporánea de paisajes urbanos.
           </p>
           <p>
-            Using a variety of media including oils, acrylics, and metals, Paul creates artworks
-            that are both visually striking and emotionally evocative. His wet-on-wet technique
-            allows him to create pieces with a sense of movement and life, perfectly capturing
-            the dynamic nature of urban environments.
+            Utilizando una variedad de técnicas, como óleos, acrílicos y metales, Paul crea obras de arte visualmente impactantes y evocadoras. Su técnica de húmedo sobre húmedo le permite crear piezas con una sensación de movimiento y vida, capturando a la perfección la naturaleza dinámica de los entornos urbanos.
           </p>
           <p>
-            Each artwork is completed with a professional finish and comes ready to hang.
-            All original paintings are signed by Paul, making each piece a unique collector's item.
+          Cada obra cuenta con un acabado profesional y se entrega lista para colgar.
+          Todas las pinturas originales están firmadas por Paul, lo que convierte cada pieza en una pieza única de colección.
           </p>
         </div>
       </div>
@@ -132,7 +127,7 @@ export default function ArtworkPage({ params }: ArtworkPageProps) {
       {relatedArtworks.length > 0 && (
         <div className="mt-16">
           <h2 className="text-xl md:text-2xl font-serif text-center mb-8">
-            You May Also Like
+            Tambien deberias ver
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {relatedArtworks.map((item) => (

@@ -48,10 +48,10 @@ export default function CartDrawer() {
       <SheetContent className="w-full sm:max-w-md overflow-y-auto">
         <SheetHeader className="mb-4">
           <div className="flex items-center justify-between">
-            <SheetTitle className="font-serif">Shopping Cart</SheetTitle>
+            <SheetTitle className="font-serif">Carrito de Compras</SheetTitle>
             <SheetClose className="rounded-full hover:bg-gray-100 p-1">
               <X className="h-4 w-4" />
-              <span className="sr-only">Close</span>
+              <span className="sr-only">Cerrado</span>
             </SheetClose>
           </div>
           <Separator />
@@ -59,9 +59,9 @@ export default function CartDrawer() {
 
         {items.length === 0 ? (
           <div className="flex flex-col items-center justify-center h-[50vh]">
-            <p className="text-gray-500 mb-4">Your cart is empty</p>
+            <p className="text-gray-500 mb-4">Tu Carrito esta Vacio</p>
             <Button asChild>
-              <Link href="/collections">Browse Collections</Link>
+              <Link href="/collections">Buscar Colección</Link>
             </Button>
           </div>
         ) : (
@@ -86,12 +86,12 @@ export default function CartDrawer() {
               </div>
 
               <div className="text-sm text-gray-500">
-                Shipping and taxes calculated at checkout
+                Envío e impuestos calculados al finalizar la compra
               </div>
 
               <div className="flex flex-col space-y-2">
                 <Button className="w-full bg-black hover:bg-gray-800">
-                  <Link href="/checkout">Proceed to Checkout</Link>
+                  <Link href="/checkout">Continuar con el Pago</Link>
                 </Button>
 
                 <Button

@@ -12,17 +12,17 @@ export default function ContactPage() {
       <div className="max-w-2xl mx-auto">
         <div className="grid gap-8">
           <div className="bg-white p-6 shadow-sm">
-            <h2 className="font-serif text-xl mb-4">Get In Touch</h2>
+            <h2 className="font-serif text-xl mb-4">Ponte en contacto</h2>
             <p className="mb-6">
-              Please use the contact form below to get in touch with Paul or his team.
-              For artwork enquiries, commissions, or any other questions, we aim to respond within 24 hours.
+              Utilice el formulario de contacto a continuación para contactar con Paul o su equipo.
+              Para consultas sobre obras de arte, encargos o cualquier otra pregunta, le responderemos en un plazo de 24 horas.
             </p>
 
             <form className="space-y-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                    Name
+                    Nombre
                   </label>
                   <input
                     type="text"
@@ -48,7 +48,7 @@ export default function ContactPage() {
 
               <div>
                 <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
-                  Subject
+                  Asunto
                 </label>
                 <input
                   type="text"
@@ -61,7 +61,7 @@ export default function ContactPage() {
 
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-                  Message
+                  Mensaje
                 </label>
                 <textarea
                   id="message"
@@ -77,29 +77,29 @@ export default function ContactPage() {
                   type="submit"
                   className="bg-[#333334] text-white px-6 py-2 text-sm uppercase tracking-wider hover:bg-black transition-colors duration-300"
                 >
-                  Send Message
+                  Enviar Mensaje
                 </button>
               </div>
             </form>
           </div>
 
           <div className="bg-white p-6 shadow-sm">
-            <h2 className="font-serif text-xl mb-4">Contact Details</h2>
+            <h2 className="font-serif text-xl mb-4">Detalles del contacto</h2>
             <div className="space-y-3">
               <p>
-                <strong>Phone:</strong> +44(0)1271 822844
+                <strong>Telefono:</strong> +57 318 221 8211
               </p>
               <p>
-                <strong>Email:</strong> info@paulkenton.com
+                <strong>Email:</strong> info@jhonycasierra.com
               </p>
               <p>
-                <strong>Address:</strong><br />
-                Paul Kenton Ltd<br />
-                Lower Whitestone<br />
-                Chulmleigh<br />
-                Devon<br />
-                EX18 7NV<br />
-                United Kingdom
+                <strong>Dirección:</strong><br />
+                Jhony Casierra Ltd<br />
+                Guadalajara de Buga<br />
+                Monterrey<br />
+                Callejon las Palmas<br />
+                EX13<br />
+                Colombia
               </p>
             </div>
           </div>

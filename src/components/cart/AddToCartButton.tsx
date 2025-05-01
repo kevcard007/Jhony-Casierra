@@ -27,7 +27,7 @@ export default function AddToCartButton({ artwork }: AddToCartButtonProps) {
         size="lg"
         onClick={handleAddToCart}
       >
-        Add to Cart
+        Agregar al carrito
       </Button>
 
       <div className="grid grid-cols-2 gap-4">
@@ -35,14 +35,14 @@ export default function AddToCartButton({ artwork }: AddToCartButtonProps) {
           variant="outline"
           className="border-black hover:bg-gray-100"
         >
-          Make an Enquiry
+          Hacer una consulta
         </Button>
 
         <Button
           variant="outline"
           className="border-black hover:bg-gray-100"
         >
-          Reserve Artwork
+          Reservar Obra de Arte
         </Button>
       </div>
     </>

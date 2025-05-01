@@ -16,8 +16,8 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Paul Kenton | Contemporary Artist - Official Website",
-  description: "Contemporary artist Paul Kenton - Capturing urban energy in original cityscape paintings of New York, London, and beyond",
+  title: "Jhony Casierra | Artis Comtemporaneo - Pagina Web Oficial",
+  description: "Artista Comtemporaneto Jhony Casierra - Capturando la energía urbana en pinturas originales de paisajes urbanos de Nueva York, Londres y más allá",
 };
 
 export default function RootLayout({
