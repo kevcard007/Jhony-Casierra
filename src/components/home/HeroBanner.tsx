@@ -38,7 +38,7 @@ export default function HeroBanner({
             <Link
               key={index}
               href={button.link}
-              className="bg-white/80 hover:bg-white px-4 py-2 text-xs uppercase tracking-wider text-gray-800 transition-colors duration-300"
+              className="bg-white/80 hover:bg-white px-4 py-2 text-[10px] sm:text-xs md:text-sm lg:text-base uppercase tracking-wider text-gray-800 transition-colors duration-300"
             >
               {button.text}
             </Link>

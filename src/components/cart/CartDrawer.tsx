@@ -31,14 +31,14 @@ export default function CartDrawer() {
 
   const calculateTotal = () => {
     return items.reduce((total, item) => {
-      // Extract the numerical value from the price string (e.g., "£2,575" -> 2575)
-      const price = parseFloat(item.price.replace(/[^0-9.]/g, ""));
+      // Remove ALL non-numeric characters, including dots and commas
+      const price = parseInt(item.price.replace(/[^\d]/g, ""));
       return total + (price * item.quantity);
     }, 0);
   };
 
   const formatPrice = (price: number) => {
-    return `£${price.toLocaleString("en-GB", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+    return `$${price.toLocaleString("es-CO", { minimumFractionDigits: 0, maximumFractionDigits: 0 })}`;
   };
 
   const total = calculateTotal();

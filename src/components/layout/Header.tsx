@@ -31,7 +31,7 @@ export default function Header() {
                 alt="Jhony Barber Art"
                 width={140}
                 height={24}
-                className="h-8 w-auto"
+                className="h-6 w-32 sm:h-8 sm:w-40 md:w-48 lg:w-56 xl:w-64"
               />
             </Link>
           </div>

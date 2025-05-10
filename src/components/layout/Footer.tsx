@@ -98,7 +98,7 @@ export default function Footer() {
 
           {/* Copyright */}
           <div className="text-center text-xs text-gray-400">
-            <p>© Jhony Casierra {currentYear}</p>
+            <p>© KevAcademy {currentYear}</p>
             <p>Guadalajara de Buga, Colombia</p>
           </div>
         </div>

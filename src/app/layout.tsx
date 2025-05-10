@@ -3,6 +3,8 @@ import { Inter, Playfair_Display } from "next/font/google";
 import type { Metadata } from "next";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import AnnouncementCarousel from '@/components/layout/AnnouncementCarousel';
+import { announcementSlides } from '@/data/global';
 import ClientBody from "./ClientBody";
 
 const inter = Inter({
@@ -31,13 +33,15 @@ export default function RootLayout({
         className={`${inter.variable} ${playfair.variable} font-sans min-h-screen flex flex-col`}
       >
         <ClientBody>
+          {/* Carrusel de anuncios en la parte superior */}
+          <AnnouncementCarousel slides={announcementSlides} />
+          
           <Header />
           <main className="flex-grow">
             {children}
           </main>
           <Footer />
         </ClientBody>
-        <script src="https://stage.bepay.net.co/widgets/webcheckout/js/webcheckout-widget.js" defer></script>
       </body>
     </html>
   );

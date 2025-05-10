@@ -24,7 +24,7 @@ export default function ArtworkGrid({
   title,
   artworks,
   showMoreLink = "#",
-  showMoreText = "SHOW MORE PIECES",
+  showMoreText = "MOSTRAR MÁS PIEZAS",
   className = "",
 }: ArtworkGridProps) {
   return (

@@ -27,7 +27,7 @@ export default function AnimatedArtworkGrid({
   title,
   artworks,
   showMoreLink = "#",
-  showMoreText = "SHOW MORE PIECES",
+  showMoreText = "MOSTRAS MAS PIEZAS",
   className = "",
 }: AnimatedArtworkGridProps) {
   const titleVariants = {

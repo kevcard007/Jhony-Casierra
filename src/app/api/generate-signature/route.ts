@@ -1,33 +1,31 @@
-// src/app/api/generate-signature/route.ts
+// app/api/generate-signature/route.ts
+import { NextRequest, NextResponse } from 'next/server';
+import crypto from 'crypto';
 
-import { NextRequest, NextResponse } from "next/server";
-import crypto from "crypto";
-
-export async function POST(req: NextRequest) {
-  const body = await req.json();
-
-  const {
-    amount,
-    currency,
-    reference,
-    user_id,
-    url_response,
-    url_confirmation,
-    shop_id,
-  } = body;
-
-  // Llave secreta desde .env.local
-  const integrity = process.env.BEPAY_SECRET_KEY ?? "";
-
-  // Cadena que se firma (en orden)
-  const rawSignature = `${amount}|${currency}|${reference}|${integrity}|${user_id}|${url_response}|${url_confirmation}|${shop_id}`;
-
-  // Firma en SHA-256
-  const signature = crypto.createHash("sha256").update(rawSignature).digest("hex");
-  const token = "TOKEN_SIMULADO_" + Math.random().toString(36).substring(2, 10);
-  return NextResponse.json({ 
-        signature, 
-        reference,
-        token,
-    });
+export async function POST(request: NextRequest) {
+  try {
+    const body = await request.json();
+    const { reference, amount } = body;
+    
+    // Obtén tus claves de las variables de entorno
+    const apiKey = process.env.PAYU_API_KEY;
+    const merchantId = process.env.PAYU_MERCHANT_ID;
+    
+    // La cadena a firmar tiene este formato: apiKey~merchantId~referenceCode~amount~currency
+    const stringToHash = `${apiKey}~${merchantId}~${reference}~${amount}~COP`;
+    
+    // Generar la firma en MD5
+    const signature = crypto
+      .createHash('md5')
+      .update(stringToHash)
+      .digest('hex');
+    
+    return NextResponse.json({ signature });
+  } catch (error) {
+    console.error('Error generando la firma:', error);
+    return NextResponse.json(
+      { error: 'Error generando la firma' },
+      { status: 500 }
+    );
+  }
 }
