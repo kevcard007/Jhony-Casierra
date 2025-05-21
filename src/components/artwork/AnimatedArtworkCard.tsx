@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 interface AnimatedArtworkCardProps {
   id: string;
@@ -14,6 +13,8 @@ interface AnimatedArtworkCardProps {
   type?: string;
   slug?: string;
   index: number;
+  subtitle?: string;
+  currency?: string;
 }
 
 export default function AnimatedArtworkCard({
@@ -25,8 +26,10 @@ export default function AnimatedArtworkCard({
   type = "Original Art",
   slug = "#",
   index,
+  subtitle,
+  currency,
 }: AnimatedArtworkCardProps) {
-  // Animation variants
+  // Solo animación de entrada (sin hover en la tarjeta)
   const cardVariants = {
     hidden: {
       opacity: 0,
@@ -41,41 +44,47 @@ export default function AnimatedArtworkCard({
         ease: "easeOut",
       }
     }),
-    hover: {
-      y: -10,
-      boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
-      transition: {
-        duration: 0.3,
-      }
-    }
   };
 
   return (
     <motion.div
-      className="artwork-card group"
+      className="artwork-card"
       variants={cardVariants}
       initial="hidden"
       whileInView="visible"
-      whileHover="hover"
       viewport={{ once: true, amount: 0.2 }}
       custom={index}
     >
       <Link href={`/artwork/${slug}`} className="block">
-        <div className="relative p-3 bg-white">
-          <AspectRatio ratio={1}>
+        {/* Marco gris completamente estático */}
+        <div className="bg-gray-200 p-6 rounded-sm">
+          {/* Contenedor de la imagen con overflow hidden para el efecto zoom */}
+          <div className="relative w-full aspect-square overflow-hidden">
             <Image
               src={image}
               alt={title}
               fill
-              className="object-contain"
+              className="object-cover transition-transform duration-500 ease-out hover:scale-110"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
-          </AspectRatio>
+          </div>
         </div>
-        <div className="p-3 text-center">
-          <h3 className="artwork-title">{title}</h3>
-          {size && <p className="text-xs text-gray-500 mt-1">{size}</p>}
-          <p className="artwork-price mt-1">{price}</p>
+        
+        {/* Información del artwork */}
+        <div className="mt-4 text-center">
+          <h3 className="text-black font-semibold text-sm mb-1 uppercase tracking-wide">
+            {title}
+          </h3>
+          
+          {size && (
+            <p className="text-gray-600 text-xs mb-1">
+              {size}
+            </p>
+          )}
+          
+          <p className="text-black font-semibold text-sm mb-1 uppercase tracking-wide">
+            ${price.toLocaleString()}
+          </p>
         </div>
       </Link>
     </motion.div>

@@ -64,7 +64,7 @@ export default function CollectionsPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
           <div>
             <Image
-              src="/images/artwork2.jpeg"
+              src="/images/artwork2.png"
               alt="Abstract Collection"
               width={600}
               height={600}

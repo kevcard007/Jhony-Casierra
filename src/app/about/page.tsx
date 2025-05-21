@@ -10,7 +10,7 @@ export default function AboutPage() {
       {/* Hero Banner */}
       <div className="relative h-[50vh] min-h-[300px] w-full">
         <Image
-          src="/images/hero.jpeg"
+          src="/images/hero_1.jpg"
           alt="Paul Kenton in New York"
           fill
           className="object-cover object-center"
@@ -36,7 +36,7 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="md:col-span-1">
             <Image
-              src="/images/hero.jpeg"
+              src="/images/hero_1.jpg"
               alt="Paul Kenton"
               width={400}
               height={600}
@@ -60,21 +60,21 @@ export default function AboutPage() {
             <div className="relative hidden md:block">
               <div className="grid grid-cols-3 gap-4 py-8">
                 <Image
-                  src="/images/artwork1.jpeg"
+                  src="/images/artwork1.png"
                   alt="Paul Kenton artwork"
                   width={200}
                   height={200}
                   className="w-full h-auto"
                 />
                 <Image
-                  src="/images/artwork2.jpeg"
+                  src="/images/artwork2.png"
                   alt="Paul Kenton artwork"
                   width={200}
                   height={200}
                   className="w-full h-auto"
                 />
                 <Image
-                  src="/images/artwork3.jpeg"
+                  src="/images/artwork3.png"
                   alt="Paul Kenton artwork"
                   width={200}
                   height={200}

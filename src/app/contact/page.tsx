@@ -5,7 +5,7 @@ export default function ContactPage() {
   return (
     <div className="container mx-auto px-4 py-12">
       <h1 className="uppercase text-center font-serif text-2xl md:text-3xl tracking-wider mb-4">
-        Contact Paul
+        Contácta a Jhony
       </h1>
       <Separator className="mb-12 max-w-xs mx-auto" />
 
