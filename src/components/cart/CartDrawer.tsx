@@ -11,7 +11,9 @@ import {
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { X, Trash, Plus, Minus } from "lucide-react";
-import { useCart, CartItem } from "@/lib/contexts/CartContext";
+import { useCart } from "@/lib/contexts/CartContext";
+import type { CartItem } from "@/lib/contexts/CartContext";
+
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";

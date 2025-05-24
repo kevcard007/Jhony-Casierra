@@ -15,16 +15,16 @@ export default function Footer() {
               Subscribete/Sigueme para ver las ultimas novedades a traves de video e imagen
             </p>
             <div className="flex space-x-6">
-              <Link href="https://facebook.com" aria-label="Facebook">
+              <Link href="https://www.facebook.com/share/1B3dDPovza/?mibextid=wwXIfr" aria-label="Facebook">
                 <Facebook size={18} className="text-white hover:text-gray-300" />
               </Link>
-              <Link href="https://twitter.com" aria-label="Twitter">
+              {/*<Link href="https://twitter.com" aria-label="Twitter">
                 <Twitter size={18} className="text-white hover:text-gray-300" />
-              </Link>
-              <Link href="https://instagram.com" aria-label="Instagram">
+              </Link>*/}
+              <Link href="https://www.instagram.com/jhonycasierra?igsh=MWxzemJnM29icWllMQ==" aria-label="Instagram">
                 <Instagram size={18} className="text-white hover:text-gray-300" />
               </Link>
-              <Link href="https://tiktok.com" aria-label="TikTok">
+              {/*<Link href="https://tiktok.com" aria-label="TikTok">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="18"
@@ -41,7 +41,7 @@ export default function Footer() {
                   <path d="M20 9V4a1 1 0 0 0-1-1h-1a1 1 0 0 0-1 1v5a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1V8a1 1 0 0 0-1-1h-1"/>
                   <path d="M14 8v5a7 7 0 0 1-7 7v0a7 7 0 0 1-7-7v0a7 7 0 0 1 7-7h5"/>
                 </svg>
-              </Link>
+              </Link>*/}
             </div>
           </div>
 
@@ -64,7 +64,7 @@ export default function Footer() {
                 >
                   <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                 </svg>
-                <span><Link href="#" className="hover:text-gray-300">Contactame: +57 318 221 82 11</Link></span>
+                <span><Link href="tel:+573182218211" className="hover:text-gray-300">Contactame: +57 318 221 82 11</Link></span>
               </div>
               <div className="flex items-center space-x-2">
                 <svg
@@ -89,17 +89,37 @@ export default function Footer() {
               <Link href="/checkout" className="hover:text-gray-300">Pagina de pago</Link>
               <Link href="/shipping-info" className="hover:text-gray-300">Informacion de venta</Link>
               <Link href="/terms-of-sale" className="hover:text-gray-300">Terminos de venta</Link>
-              <Link href="/privacy-policy" className="hover:text-gray-300">Politica de privacidad</Link>
+              <Link href="/politica-privacidad" className="hover:text-gray-300">Politica de privacidad</Link>
               <Link href="/my-account" className="hover:text-gray-300">Mi cuenta</Link>
             </div>
           </div>
 
           <Separator className="bg-gray-700" />
 
-          {/* Copyright */}
+          {/* Sección de enlaces adicionales */}
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <div className="flex flex-wrap justify-center md:justify-start space-x-4 text-xs">
+              <Link href="/cookies" className="text-gray-300 hover:text-white transition-colors">
+                Política de Cookies
+              </Link>
+              <Link href="/terminos-condiciones" className="text-gray-300 hover:text-white transition-colors">
+                Términos y Condiciones
+              </Link>
+              <Link href="/galeria" className="text-gray-300 hover:text-white transition-colors">
+                Ver Galería
+              </Link>
+            </div>
+          </div>
+
+          <Separator className="bg-gray-700" />
+
+          {/* Copyright - Actualizado */}
           <div className="text-center text-xs text-gray-400">
-            <p>© KevAcademy {currentYear}</p>
+            <p>© KevAcademy {currentYear} - Todos los derechos reservados</p>
             <p>Guadalajara de Buga, Colombia</p>
+            <p className="mt-1 text-gray-500">
+              Arte Contemporáneo • Sitio web actualizado: {new Date().toLocaleDateString('es-ES')}
+            </p>
           </div>
         </div>
       </div>

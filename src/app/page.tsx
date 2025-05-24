@@ -2,11 +2,14 @@ import AnimatedHeroBanner from "@/components/home/AnimatedHeroBanner";
 import AnimatedArtworkGrid from "@/components/artwork/AnimatedArtworkGrid";
 import CollectionsSection from "@/components/home/CollectionsSection";
 import AnimatedSection from "@/components/animations/AnimatedSection";
+// Actualizar la importación para usar la nueva estructura con sistema de ventas
 import { featuredArtwork, studioWorks, limitedEditionPrints, collections } from "@/data/artwork";
 import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
 import HeroCarousel from '@/components/home/HeroCarousel';
 import { motion } from "framer-motion";
+// Importar el ArtworkGrid actualizado que soporta el sistema de ventas
+import ArtworkGrid from "@/components/artwork/ArtworkGrid";
 
 // Collecciones locales (renombradas para evitar conflicto)
 const localCollections = [
@@ -121,26 +124,32 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured Artwork Section */}
-      <AnimatedArtworkGrid
+      {/* Featured Artwork Section - ACTUALIZADO CON SISTEMA DE VENTAS */}
+      <ArtworkGrid
         title="OBRAS DESTACADAS"
         artworks={featuredArtwork}
-        showMoreLink="/artworks"
+        showOnlyAvailable={true} // Solo mostrar obras disponibles en la página principal
+        showMoreLink="/galeria"
+        showMoreText="VER TODAS LAS OBRAS"
       />
 
-      {/* Studio Works Section */}
-      <AnimatedArtworkGrid
+      {/* Studio Works Section - ACTUALIZADO CON SISTEMA DE VENTAS */}
+      <ArtworkGrid
         title="GRANDES OBRAS"
         artworks={studioWorks}
-        showMoreLink="/studio-works"
+        showOnlyAvailable={true} // Solo mostrar obras disponibles
+        showMoreLink="/galeria"
+        showMoreText="VER TODAS LAS GRANDES OBRAS"
         className="bg-[#f7f7f7]"
       />
 
-      {/* Limited Edition Prints Section */}
-      <AnimatedArtworkGrid
+      {/* Limited Edition Prints Section - ACTUALIZADO CON SISTEMA DE VENTAS */}
+      <ArtworkGrid
         title="IMPRESIONES EDICION LIMITADA"
         artworks={limitedEditionPrints}
-        showMoreLink="/limited-edition-prints"
+        showOnlyAvailable={true} // Solo mostrar prints disponibles
+        showMoreLink="/galeria"
+        showMoreText="VER TODAS LAS EDICIONES LIMITADAS"
         className="bg-[#e6e6e6]"
       />
 

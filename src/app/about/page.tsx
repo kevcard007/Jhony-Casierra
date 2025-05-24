@@ -8,7 +8,7 @@ export default function AboutPage() {
   return (
     <div>
       {/* Hero Banner */}
-      <div className="relative h-[50vh] min-h-[300px] w-full">
+      <div className="relative h-[100vh] min-h-[300px] w-full">
         <Image
           src="/images/hero_1.jpg"
           alt="Paul Kenton in New York"
@@ -19,24 +19,14 @@ export default function AboutPage() {
         <div className="absolute inset-0 bg-black/30"></div>
       </div>
 
-      {/* Carousel Indicators - Static for this demo */}
-      <div className="bg-white flex justify-center py-3">
-        <div className="flex gap-2">
-          {[1, 2, 3, 4, 5].map((i) => (
-            <div
-              key={i}
-              className={`w-2 h-2 rounded-full ${i === 1 ? 'bg-gray-800' : 'bg-gray-300'}`}
-            />
-          ))}
-        </div>
-      </div>
+     
 
       {/* About Content */}
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="md:col-span-1">
             <Image
-              src="/images/hero_1.jpg"
+              src="/images/hero_6.jpg"
               alt="Paul Kenton"
               width={400}
               height={600}
@@ -88,6 +78,15 @@ export default function AboutPage() {
               </div>
             </div>
 
+            <div className="md:col-span-1">
+            <Image
+              src="/images/hero_1.jpg"
+              alt="Paul Kenton"
+              width={400}
+              height={600}
+              className="w-full h-auto"
+            />
+          </div>
             <h2 className="pk-heading text-2xl mt-10">Presente</h2>
             <p>
               Paul's painting style has evolved into a free flowing fusion of various media, choosing not to be constrained at any one medium, simply picking what he feels would communicate the ideas he has in a more fluid way.

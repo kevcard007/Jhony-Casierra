@@ -1,15 +1,18 @@
 // data/global.ts
 export const announcementSlides = [
-    {
-      text: "ENVÍOS GRATUITOS A TODO EL MUNDO*",
-      link: "/shipping",
-    },
-    {
-      text: "LLÁMAME +57 317 000 0000",
-      link: "tel:+573170000000",
-    },
-    {
-      text: "CONTÁCTAME PARA CUALQUIER CONSULTA",
-      link: "/contact",
-    },
-  ];
+  {
+    text: "ENVÍOS GRATUITOS*",
+    icon: "truck", // Ícono de camión
+    link: "/shipping",
+  },
+  {
+    text: "LLÁMAME +57 318 2218211 ",
+    icon: "phone", // Ícono de teléfono
+    link: "tel:+573182218211",
+  },
+  {
+    text: "CONTÁCTAME",
+    icon: "mail", // Ícono de correo
+    link: "/contact",
+  },
+];

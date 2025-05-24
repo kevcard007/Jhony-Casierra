@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useMemo } from "react";
 import AnimatedArtworkCard from "./AnimatedArtworkCard";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -13,6 +13,16 @@ interface Artwork {
   size?: string;
   type?: string;
   slug?: string;
+  // Nuevos campos para sistema de ventas
+  status: 'available' | 'sold' | 'reserved' | 'on_hold';
+  soldDate?: Date;
+  quantity?: number;
+  maxQuantity?: number;
+  // Nuevos campos para sistema de descuentos
+  originalPrice?: string;
+  discountedPrice?: string;
+  discountPercentage?: number;
+  hasDiscount?: boolean;
 }
 
 interface AnimatedArtworkGridProps {
@@ -21,15 +31,29 @@ interface AnimatedArtworkGridProps {
   showMoreLink?: string;
   showMoreText?: string;
   className?: string;
+  // Nueva prop para filtrar solo disponibles
+  showOnlyAvailable?: boolean;
 }
 
 export default function AnimatedArtworkGrid({
   title,
   artworks,
   showMoreLink = "#",
-  showMoreText = "MOSTRAS MAS PIEZAS",
+  showMoreText = "MOSTRAR MÁS PIEZAS",
   className = "",
+  showOnlyAvailable = false,
 }: AnimatedArtworkGridProps) {
+  
+  // Filtrar obras si showOnlyAvailable es true
+  const filteredArtworks = useMemo(() => {
+    if (showOnlyAvailable) {
+      return artworks.filter(artwork => 
+        artwork.status === 'available' && (artwork.quantity || 0) > 0
+      );
+    }
+    return artworks;
+  }, [artworks, showOnlyAvailable]);
+
   const titleVariants = {
     hidden: { opacity: 0, y: -20 },
     visible: {
@@ -48,7 +72,7 @@ export default function AnimatedArtworkGrid({
       opacity: 1,
       scale: 1,
       transition: {
-        delay: 0.5 + (artworks.length * 0.1), // Start after all artworks are visible
+        delay: 0.5 + (filteredArtworks.length * 0.1), // Start after all artworks are visible
         duration: 0.3,
         ease: "easeOut",
       }
@@ -77,7 +101,7 @@ export default function AnimatedArtworkGrid({
         </motion.h2>
 
         <div className="artwork-grid">
-          {artworks.map((artwork, index) => (
+          {filteredArtworks.map((artwork, index) => (
             <AnimatedArtworkCard
               key={artwork.id}
               id={artwork.id}
@@ -88,11 +112,28 @@ export default function AnimatedArtworkGrid({
               type={artwork.type}
               slug={artwork.slug}
               index={index}
+              status={artwork.status}
+              soldDate={artwork.soldDate}
+              quantity={artwork.quantity}
+              maxQuantity={artwork.maxQuantity}
+              originalPrice={artwork.originalPrice}
+              discountedPrice={artwork.discountedPrice}
+              discountPercentage={artwork.discountPercentage}
+              hasDiscount={artwork.hasDiscount}
             />
           ))}
         </div>
 
-        {showMoreLink && (
+        {/* Mensaje cuando no hay obras disponibles (solo si se está filtrando) */}
+        {showOnlyAvailable && filteredArtworks.length === 0 && (
+          <div className="text-center py-12">
+            <p className="text-gray-500 text-lg">
+              No hay obras disponibles en este momento
+            </p>
+          </div>
+        )}
+
+        {showMoreLink && filteredArtworks.length > 0 && (
           <div className="flex justify-center mt-8">
             <motion.div
               variants={buttonVariants}

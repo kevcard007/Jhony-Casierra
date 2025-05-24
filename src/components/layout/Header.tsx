@@ -51,10 +51,10 @@ export default function Header() {
 
           {/* Social Icons & Cart */}
           <div className="hidden md:flex items-center space-x-4">
-            <Link href="https://instagram.com" aria-label="Instagram">
+            <Link href="https://www.instagram.com/jhonycasierra?igsh=MWxzemJnM29icWllMQ==" aria-label="Instagram">
               <FaInstagram size={20} className="text-gray-800 hover:text-pk-earth-tone" />
             </Link>
-            <Link href="https://tiktok.com" aria-label="TikTok">
+            {/*<Link href="https://tiktok.com" aria-label="TikTok">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -64,8 +64,8 @@ export default function Header() {
               >
                 <path d="M224 80.4c-22.1 0-40-17.9-40-40h-40v130.1c0 17.6-14.3 31.9-32 31.9s-32-14.3-32-32 14.3-32 32-32c3.5 0 6.9 0.6 10.1 1.7v-33.9c-3.3-0.5-6.7-0.8-10.1-0.8-35.3 0-64 28.7-64 64s28.7 64 64 64 64-28.7 64-64V120c11.3 7.5 24.9 11.7 40 11.7v-31.3z"/>
               </svg>
-            </Link>
-            <Link href="https://facebook.com" aria-label="Facebook">
+            </Link>*/}
+            <Link href="https://www.facebook.com/share/1B3dDPovza/?mibextid=wwXIfr" aria-label="Facebook">
               <FaFacebook size={20} className="text-gray-800 hover:text-pk-earth-tone" />
             </Link>
             <CartButton />
@@ -94,10 +94,10 @@ export default function Header() {
                     </Link>
                   ))}
                   <div className="flex space-x-4 pt-4">
-                    <Link href="https://instagram.com" aria-label="Instagram">
+                    <Link href="https://www.instagram.com/jhonycasierra?igsh=MWxzemJnM29icWllMQ==" aria-label="Instagram">
                       <FaInstagram size={20} />
                     </Link>
-                    <Link href="https://tiktok.com" aria-label="TikTok">
+                    {/*<Link href="https://tiktok.com" aria-label="TikTok">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="20"
@@ -113,8 +113,8 @@ export default function Header() {
                         <path d="M20 9V4a1 1 0 0 0-1-1h-1a1 1 0 0 0-1 1v5a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1V8a1 1 0 0 0-1-1h-1"/>
                         <path d="M14 8v5a7 7 0 0 1-7 7v0a7 7 0 0 1-7-7v0a7 7 0 0 1 7-7h5"/>
                       </svg>
-                    </Link>
-                    <Link href="https://facebook.com" aria-label="Facebook">
+                    </Link>*/}
+                    <Link href="https://www.facebook.com/share/1B3dDPovza/?mibextid=wwXIfr" aria-label="Facebook">
                       <FaFacebook size={20} />
                     </Link>
                   </div>

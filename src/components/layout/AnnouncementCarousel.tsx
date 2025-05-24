@@ -4,10 +4,12 @@
 import { useState, useEffect, useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Link from "next/link";
+import { Truck, Phone, Mail, ChevronLeft, ChevronRight } from "lucide-react";
 
 interface AnnouncementSlide {
   text: string;
   link: string;
+  icon?: string; // Nueva propiedad para el ícono
 }
 
 interface AnnouncementCarouselProps {
@@ -15,6 +17,25 @@ interface AnnouncementCarouselProps {
   autoplay?: boolean;
   autoplayDelay?: number;
 }
+
+// Función para obtener el ícono correcto
+const getIcon = (iconName?: string) => {
+  const iconProps = { 
+    size: 16, 
+    className: "text-white mr-2 flex-shrink-0" 
+  };
+  
+  switch (iconName) {
+    case 'truck':
+      return <Truck {...iconProps} />;
+    case 'phone':
+      return <Phone {...iconProps} />;
+    case 'mail':
+      return <Mail {...iconProps} />;
+    default:
+      return null;
+  }
+};
 
 export default function AnnouncementCarousel({
   slides,
@@ -66,23 +87,10 @@ export default function AnnouncementCarousel({
       <div className="container mx-auto flex items-center justify-between relative">
         <button
           onClick={scrollPrev}
-          className="text-white flex items-center justify-center z-10"
+          className="text-white flex items-center justify-center z-10 hover:text-gray-300 transition-colors"
           aria-label="Anterior anuncio"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={2}
-            stroke="currentColor"
-            className="w-5 h-5"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M15.75 19.5L8.25 12l7.5-7.5"
-            />
-          </svg>
+          <ChevronLeft size={20} />
         </button>
 
         <div className="overflow-hidden flex-grow" ref={emblaRef}>
@@ -94,9 +102,10 @@ export default function AnnouncementCarousel({
               >
                 <Link
                   href={slide.link}
-                  className="text-sm text-center tracking-wider uppercase hover:text-gray-300 transition-colors"
+                  className="text-sm text-center tracking-wider uppercase hover:text-gray-300 transition-colors flex items-center justify-center"
                 >
-                  {slide.text}
+                  {getIcon(slide.icon)}
+                  <span>{slide.text}</span>
                 </Link>
               </div>
             ))}
@@ -105,23 +114,10 @@ export default function AnnouncementCarousel({
 
         <button
           onClick={scrollNext}
-          className="text-white flex items-center justify-center z-10"
+          className="text-white flex items-center justify-center z-10 hover:text-gray-300 transition-colors"
           aria-label="Siguiente anuncio"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={2}
-            stroke="currentColor"
-            className="w-5 h-5"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M8.25 4.5l7.5 7.5-7.5 7.5"
-            />
-          </svg>
+          <ChevronRight size={20} />
         </button>
       </div>
     </div>
