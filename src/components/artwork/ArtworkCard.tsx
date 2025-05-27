@@ -27,13 +27,13 @@ const getStockInfo = (artwork: ArtworkCardProps): { text: string; className: str
   if (artwork.type?.includes('Original')) {
     switch (artwork.status) {
       case 'available':
-        return { text: 'Disponible', className: 'text-green-600', showBadge: false };
+        return { text: 'Disponible', className: 'text-green-400', showBadge: false };
       case 'sold':
-        return { text: 'Vendida', className: 'text-red-600', showBadge: true };
+        return { text: 'Vendida', className: 'text-red-400', showBadge: true };
       case 'reserved':
-        return { text: 'Reservada', className: 'text-orange-600', showBadge: true };
+        return { text: 'Reservada', className: 'text-orange-400', showBadge: true };
       case 'on_hold':
-        return { text: 'En espera', className: 'text-yellow-600', showBadge: true };
+        return { text: 'En espera', className: 'text-yellow-400', showBadge: true };
       default:
         return { text: '', className: '', showBadge: false };
     }
@@ -42,11 +42,11 @@ const getStockInfo = (artwork: ArtworkCardProps): { text: string; className: str
     const total = artwork.maxQuantity || 0;
     
     if (remaining === 0) {
-      return { text: 'Agotado', className: 'text-red-600', showBadge: true };
+      return { text: 'Agotado', className: 'text-red-400', showBadge: true };
     } else if (remaining <= 3) {
-      return { text: `Últimas ${remaining}`, className: 'text-red-500', showBadge: true };
+      return { text: `Últimas ${remaining}`, className: 'text-red-400', showBadge: true };
     } else {
-      return { text: `${remaining}/${total}`, className: 'text-gray-600', showBadge: false };
+      return { text: `${remaining}/${total}`, className: 'text-gray-400', showBadge: false };
     }
   }
 };
@@ -60,16 +60,16 @@ const StatusBadge = ({ artwork }: { artwork: ArtworkCardProps }) => {
   const getBadgeStyle = () => {
     switch (artwork.status) {
       case 'sold':
-        return 'bg-black text-white';
+        return 'bg-[#1f2937] text-white border border-gray-600';
       case 'reserved':
-        return 'bg-gray-600 text-white';
+        return 'bg-[#1f2937] text-white border border-gray-600';
       case 'on_hold':
-        return 'bg-gray-400 text-white';
+        return 'bg-[#1f2937] text-white border border-gray-600';
       default:
         if (artwork.type?.includes('Limited') && (artwork.quantity || 0) <= 3) {
           return 'bg-red-600 text-white';
         }
-        return 'bg-gray-800 text-white';
+        return 'bg-[#1f2937] text-white border border-gray-600';
     }
   };
 
@@ -107,9 +107,9 @@ export default function ArtworkCard({
   return (
     <div className="artwork-card group">
       <Link href={`/artwork/${slug}`} className="block">
-        {/* Contenedor principal - manteniendo tu diseño original */}
-        <div className="relative p-3 bg-white">
-          {/* Badge de descuento - cajita roja llamativa */}
+        {/* Contenedor principal con tema dark */}
+        <div className="relative p-3 bg-[#1a1a1a] border border-gray-700 hover:border-gray-600 transition-all duration-200 group-hover:bg-[#2a2a2a]">
+          {/* Badge de descuento - manteniendo el rojo llamativo */}
           {hasDiscount && discountPercentage && (
             <div className="absolute top-2 left-2 bg-red-600 text-white px-2 py-1 text-xs font-bold uppercase tracking-wide z-10 shadow-lg">
               {discountPercentage}% DESCUENTO
@@ -131,11 +131,11 @@ export default function ArtworkCard({
             />
           </AspectRatio>
           
-          {/* Overlay para obras no disponibles */}
+          {/* Overlay para obras no disponibles - adaptado al tema dark */}
           {isUnavailable && (
-            <div className="absolute inset-0 bg-white bg-opacity-50 flex items-center justify-center">
+            <div className="absolute inset-0 bg-[#0a0a0a] bg-opacity-70 flex items-center justify-center">
               <div className="text-center">
-                <div className="text-gray-600 font-medium text-sm uppercase tracking-wide">
+                <div className="text-gray-400 font-medium text-sm uppercase tracking-wide">
                   No Disponible
                 </div>
               </div>
@@ -143,30 +143,32 @@ export default function ArtworkCard({
           )}
         </div>
         
-        <div className="p-3 text-center">
-          <h3 className="artwork-title">{title}</h3>
-          {size && <p className="text-xs text-gray-500 mt-1">{size}</p>}
+        <div className="p-3 text-center bg-[#1a1a1a] border-l border-r border-b border-gray-700 group-hover:border-gray-600 transition-colors duration-200">
+          <h3 className="text-white font-medium text-sm uppercase tracking-wide mb-1 group-hover:text-amber-400 transition-colors duration-200">
+            {title}
+          </h3>
+          {size && <p className="text-xs text-gray-400 mt-1">{size}</p>}
           
           {/* Sistema de precios con descuento */}
           {hasDiscount && originalPrice && discountedPrice ? (
-            <div className="mt-1">
-              <p className="text-sm text-gray-400 line-through">{originalPrice}</p>
-              <p className="artwork-price text-red-600 font-bold">{discountedPrice}</p>
+            <div className="mt-2">
+              <p className="text-sm text-gray-500 line-through">{originalPrice}</p>
+              <p className="text-amber-400 font-bold text-lg">{discountedPrice}</p>
             </div>
           ) : (
-            <p className="artwork-price mt-1">{price}</p>
+            <p className="text-amber-400 font-bold text-lg mt-2">{price}</p>
           )}
           
           {/* Información de stock */}
           {stockText && (
-            <p className={`text-xs mt-1 font-medium ${stockClassName}`}>
+            <p className={`text-xs mt-2 font-medium ${stockClassName}`}>
               {stockText}
             </p>
           )}
           
           {/* Fecha de venta para obras vendidas */}
           {soldDate && status === 'sold' && (
-            <p className="text-xs text-gray-400 mt-1">
+            <p className="text-xs text-gray-500 mt-1">
               Vendido {soldDate.toLocaleDateString('es-ES', { 
                 year: 'numeric', 
                 month: 'short', 

@@ -280,9 +280,9 @@ export const limitedEditionPrints: Artwork[] = [
     id: "lep5",
     title: "VIBRANT BARCELONA",
     image: "/images/artwork12.png",
-    price: "$148", // 50% descuento
-    originalPrice: "$295",
-    discountedPrice: "$148",
+    price: "$120000", // 50% descuento
+    originalPrice: "$240000",
+    discountedPrice: "$120000",
     discountPercentage: 50,
     hasDiscount: true,
     size: "60 × 60 cm",

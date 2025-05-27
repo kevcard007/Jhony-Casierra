@@ -132,10 +132,10 @@ export default function HeroCarousel({
         </motion.div>
       </AnimatePresence>
 
-      {/* Overlay con gradiente - más sutil en móvil */}
+      {/* Overlay con gradiente - más elegante para dark theme */}
       <div className="absolute inset-0 
-        bg-gradient-to-b from-black/20 via-transparent to-black/30
-        md:bg-gradient-to-b md:from-black/30 md:via-transparent md:to-black/40" />
+        bg-gradient-to-b from-black/40 via-transparent to-black/60
+        md:bg-gradient-to-b md:from-black/50 md:via-transparent md:to-black/70" />
 
       {/* Contenido de texto */}
       <AnimatePresence mode="wait">
@@ -190,12 +190,12 @@ export default function HeroCarousel({
               <motion.div key={`btn-${btnIndex}`} variants={itemVariants}>
                 <Link
                   href={button.link}
-                  className="bg-white/80 hover:bg-white 
+                  className="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20
                     px-3 py-2 text-xs 
                     sm:px-4 sm:py-2 sm:text-xs
                     md:px-6 md:py-3 md:text-sm 
-                    uppercase tracking-wider text-gray-800 
-                    transition-colors duration-300 backdrop-blur-sm
+                    uppercase tracking-wider text-white font-medium
+                    transition-all duration-300
                     text-center inline-block"
                 >
                   {button.text}
@@ -206,7 +206,36 @@ export default function HeroCarousel({
         )}
       </AnimatePresence>
 
-      {/* Botones de navegación - más pequeños en móvil */}
+      {/* Botones de navegación - estilo dark elegante */}
+      <button
+        className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-10 
+          bg-black/30 hover:bg-black/50 border border-white/20
+          w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 
+          rounded-full flex items-center justify-center 
+          backdrop-blur-md transition-all duration-300"
+        onClick={scrollPrev}
+        aria-label="Anterior"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" 
+          className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-white">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+        </svg>
+      </button>
+      
+      <button
+        className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-10 
+          bg-black/30 hover:bg-black/50 border border-white/20
+          w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 
+          rounded-full flex items-center justify-center 
+          backdrop-blur-md transition-all duration-300"
+        onClick={scrollNext}
+        aria-label="Siguiente"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" 
+          className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-white">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+        </svg>
+      </button>
       <button
         className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-10 
           bg-white/20 hover:bg-white/40 

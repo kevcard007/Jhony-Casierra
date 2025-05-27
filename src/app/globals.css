@@ -4,71 +4,69 @@
 
 @layer base {
   :root {
-    --background: 0 0% 98%;
-    --foreground: 240 10% 3.9%;
+    /* Dark Theme Variables - Esquema Dark Elegante */
+    --background: 0 0% 4%; /* #0a0a0a - Negro profundo */
+    --foreground: 0 0% 100%; /* #ffffff - Blanco puro */
 
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
+    --card: 0 0% 10%; /* #1a1a1a - Gris muy oscuro */
+    --card-foreground: 0 0% 100%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
+    --popover: 0 0% 16%; /* #2a2a2a - Gris oscuro para elementos destacados */
+    --popover-foreground: 0 0% 100%;
 
-    --primary: 240 5.9% 10%;
-    --primary-foreground: 0 0% 98%;
+    --primary: 45 100% 55%; /* #fbbf24 - Acento dorado */
+    --primary-foreground: 0 0% 4%;
 
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
+    --secondary: 220 13% 18%; /* #1f2937 - Badges estado oscuros */
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
+    --muted: 220 9% 46%; /* #9ca3af - Gris medio */
+    --muted-foreground: 220 14% 82%; /* #d1d5db - Gris claro */
 
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
+    --accent: 45 100% 55%; /* #fbbf24 - Acento dorado */
+    --accent-foreground: 0 0% 4%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 0 84% 60%; /* #dc2626 - Rojo para badges descuento */
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 240 10% 3.9%;
+    --border: 220 13% 23%; /* #374151 - Bordes */
+    --input: 0 0% 16%; /* #2a2a2a - Fondo inputs */
+    --ring: 45 100% 55%; /* #fbbf24 - Ring dorado */
 
-    --radius: 0.5rem;
+    --radius: 0rem; /* Sin border radius para estética limpia */
 
-    /* Paul Kenton custom colors */
-    --pk-dark-gray: 220 2% 20%;
-    --pk-light-gray: 0 0% 96%;
-    --pk-earth-tone: 17 24% 45%;
-    --pk-accent-blue: 196 54% 50%;
+    /* Jhony Casierra custom colors - Dark Theme */
+    --jc-primary-bg: 0 0% 4%; /* #0a0a0a */
+    --jc-secondary-bg: 0 0% 10%; /* #1a1a1a */
+    --jc-elevated-bg: 0 0% 16%; /* #2a2a2a */
+    --jc-gold-accent: 45 100% 55%; /* #fbbf24 */
+    --jc-text-primary: 0 0% 100%; /* #ffffff */
+    --jc-text-secondary: 220 14% 82%; /* #d1d5db */
+    --jc-text-muted: 220 9% 46%; /* #9ca3af */
+    --jc-border: 220 13% 23%; /* #374151 */
   }
 
   .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
-
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
-
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
-
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
-
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
+    /* Mantenemos las mismas variables para consistencia */
+    --background: 0 0% 4%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 16%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 45 100% 55%;
+    --primary-foreground: 0 0% 4%;
+    --secondary: 220 13% 18%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 220 9% 46%;
+    --muted-foreground: 220 14% 82%;
+    --accent: 45 100% 55%;
+    --accent-foreground: 0 0% 4%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 13% 23%;
+    --input: 0 0% 16%;
+    --ring: 45 100% 55%;
   }
 }
 
@@ -76,26 +74,55 @@
   * {
     @apply border-border;
   }
+  
   body {
-    @apply bg-background text-foreground;
+    @apply bg-[#0a0a0a] text-white;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   }
+
+  html {
+    @apply scroll-smooth;
+  }
+  
   h1, h2, h3, h4, h5, h6 {
-    @apply font-serif;
+    @apply font-serif text-white;
+  }
+
+  /* Scrollbar personalizado para el tema dark */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-[#1a1a1a];
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-[#374151] rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-[#4b5563];
+  }
+
+  /* Selection color */
+  ::selection {
+    @apply bg-amber-400 text-black;
   }
 }
 
-/* Custom Font Styling */
+/* Custom Font Styling - Dark Theme */
 @layer components {
-  .pk-heading {
-    @apply font-serif italic text-[#333334] my-4;
+  .jc-heading {
+    @apply font-serif italic text-white my-4 tracking-wider;
   }
 
-  .pk-subheading {
-    @apply font-serif text-[#333334] text-sm uppercase tracking-wider my-2;
+  .jc-subheading {
+    @apply font-serif text-gray-300 text-sm uppercase tracking-wider my-2;
   }
 
-  .pk-read-more {
-    @apply inline-flex items-center border border-black px-4 py-2 text-xs uppercase tracking-wider hover:bg-black hover:text-white transition-colors duration-300;
+  .jc-read-more {
+    @apply inline-flex items-center bg-[#1a1a1a] border border-gray-700 px-6 py-3 text-xs uppercase tracking-wider text-white hover:bg-[#2a2a2a] hover:border-amber-400 hover:text-amber-400 transition-all duration-300 font-medium;
   }
 
   .artwork-grid {
@@ -103,14 +130,103 @@
   }
 
   .artwork-card {
-    @apply flex flex-col bg-white shadow hover:shadow-md transition-shadow duration-300;
+    @apply flex flex-col bg-[#1a1a1a] border border-gray-700 hover:border-gray-600 hover:bg-[#2a2a2a] transition-all duration-300;
   }
 
   .artwork-title {
-    @apply uppercase text-xs font-medium mt-2;
+    @apply uppercase text-xs font-medium mt-2 text-white transition-colors duration-300;
   }
 
   .artwork-price {
-    @apply text-xs text-gray-500;
+    @apply text-sm text-amber-400 font-bold;
+  }
+
+  /* Componentes de UI personalizados */
+  .dark-input {
+    @apply bg-[#2a2a2a] border border-gray-700 text-white placeholder-gray-500 focus:border-amber-400 focus:ring-1 focus:ring-amber-400 transition-colors duration-200;
+  }
+
+  .dark-button-primary {
+    @apply bg-amber-400 text-black hover:bg-amber-300 px-6 py-3 font-medium uppercase tracking-wider transition-colors duration-200;
+  }
+
+  .dark-button-secondary {
+    @apply bg-[#1a1a1a] border border-gray-700 text-white hover:bg-[#2a2a2a] hover:border-amber-400 hover:text-amber-400 px-6 py-3 font-medium uppercase tracking-wider transition-all duration-200;
+  }
+
+  /* Cards y containers */
+  .dark-card {
+    @apply bg-[#1a1a1a] border border-gray-700 hover:border-gray-600 transition-colors duration-200;
+  }
+
+  .dark-card-elevated {
+    @apply bg-[#2a2a2a] border border-gray-600 hover:border-gray-500 transition-colors duration-200;
+  }
+
+  /* Estados de carga y placeholder */
+  .dark-skeleton {
+    @apply bg-[#2a2a2a] animate-pulse;
+  }
+
+  /* Separadores */
+  .dark-separator {
+    @apply border-gray-700;
+  }
+
+  /* Enlaces */
+  .dark-link {
+    @apply text-gray-300 hover:text-amber-400 transition-colors duration-200;
+  }
+
+  /* Focus states mejorados */
+  .dark-focus {
+    @apply focus:outline-none focus:ring-2 focus:ring-amber-400 focus:ring-offset-2 focus:ring-offset-[#0a0a0a];
+  }
+
+  /* Badges */
+  .badge-discount {
+    @apply bg-red-600 text-white px-2 py-1 text-xs font-bold uppercase tracking-wide;
+  }
+
+  .badge-status {
+    @apply bg-[#1f2937] text-white px-2 py-1 text-xs font-medium uppercase tracking-wide border border-gray-600;
+  }
+
+  /* Animaciones personalizadas */
+  .fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  .slide-up {
+    animation: slideUp 0.6s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  /* Hover effects para imágenes */
+  .image-hover-zoom {
+    @apply transition-transform duration-300 hover:scale-105;
+  }
+
+  .image-hover-brightness {
+    @apply transition-all duration-300 hover:brightness-110;
   }
 }

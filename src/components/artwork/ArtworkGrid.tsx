@@ -74,9 +74,9 @@ export default function ArtworkGrid({
   }, [artworks]);
 
   return (
-    <section className={`py-8 md:py-12 ${className}`}>
+    <section className={`py-8 md:py-12 bg-[#0a0a0a] text-white ${className}`}>
       <div className="container mx-auto px-4">
-        <h2 className="uppercase text-center font-serif text-xl md:text-2xl tracking-wider mb-8">
+        <h2 className="uppercase text-center font-serif text-xl md:text-2xl tracking-wider mb-8 text-white">
           {title}
         </h2>
 
@@ -86,43 +86,43 @@ export default function ArtworkGrid({
             <div className="flex space-x-2 text-sm">
               <button
                 onClick={() => setSelectedFilter('all')}
-                className={`px-3 py-1 uppercase tracking-wide transition-colors ${
+                className={`px-3 py-1 uppercase tracking-wide transition-colors duration-200 ${
                   selectedFilter === 'all' 
-                    ? 'text-black border-b border-black' 
-                    : 'text-gray-500 hover:text-gray-700'
+                    ? 'text-amber-400 border-b border-amber-400' 
+                    : 'text-gray-400 hover:text-gray-300'
                 }`}
               >
                 Todas ({statusCounts.all})
               </button>
-              <span className="text-gray-300">|</span>
+              <span className="text-gray-600">|</span>
               <button
                 onClick={() => setSelectedFilter('available')}
-                className={`px-3 py-1 uppercase tracking-wide transition-colors ${
+                className={`px-3 py-1 uppercase tracking-wide transition-colors duration-200 ${
                   selectedFilter === 'available' 
-                    ? 'text-black border-b border-black' 
-                    : 'text-gray-500 hover:text-gray-700'
+                    ? 'text-amber-400 border-b border-amber-400' 
+                    : 'text-gray-400 hover:text-gray-300'
                 }`}
               >
                 Disponibles ({statusCounts.available})
               </button>
-              <span className="text-gray-300">|</span>
+              <span className="text-gray-600">|</span>
               <button
                 onClick={() => setSelectedFilter('sold')}
-                className={`px-3 py-1 uppercase tracking-wide transition-colors ${
+                className={`px-3 py-1 uppercase tracking-wide transition-colors duration-200 ${
                   selectedFilter === 'sold' 
-                    ? 'text-black border-b border-black' 
-                    : 'text-gray-500 hover:text-gray-700'
+                    ? 'text-amber-400 border-b border-amber-400' 
+                    : 'text-gray-400 hover:text-gray-300'
                 }`}
               >
                 Vendidas ({statusCounts.sold})
               </button>
-              <span className="text-gray-300">|</span>
+              <span className="text-gray-600">|</span>
               <button
                 onClick={() => setSelectedFilter('reserved')}
-                className={`px-3 py-1 uppercase tracking-wide transition-colors ${
+                className={`px-3 py-1 uppercase tracking-wide transition-colors duration-200 ${
                   selectedFilter === 'reserved' 
-                    ? 'text-black border-b border-black' 
-                    : 'text-gray-500 hover:text-gray-700'
+                    ? 'text-amber-400 border-b border-amber-400' 
+                    : 'text-gray-400 hover:text-gray-300'
                 }`}
               >
                 Reservadas ({statusCounts.reserved})
@@ -134,7 +134,7 @@ export default function ArtworkGrid({
         {/* Contador de resultados */}
         {showFilters && selectedFilter !== 'all' && (
           <div className="text-center mb-4">
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-gray-400">
               Mostrando {filteredArtworks.length} obras
             </p>
           </div>
@@ -166,7 +166,7 @@ export default function ArtworkGrid({
         {/* Mensaje cuando no hay resultados */}
         {filteredArtworks.length === 0 && (
           <div className="text-center py-12">
-            <p className="text-gray-500 text-lg">
+            <p className="text-gray-400 text-lg">
               No hay obras disponibles en esta categoría
             </p>
           </div>
@@ -174,7 +174,10 @@ export default function ArtworkGrid({
 
         {showMoreLink && filteredArtworks.length > 0 && (
           <div className="flex justify-center mt-8">
-            <Link href={showMoreLink} className="pk-read-more">
+            <Link 
+              href={showMoreLink} 
+              className="px-6 py-3 bg-[#1a1a1a] border border-gray-700 text-white uppercase tracking-wider text-sm hover:bg-[#2a2a2a] hover:border-amber-400 hover:text-amber-400 transition-all duration-200 font-medium"
+            >
               {showMoreText}
             </Link>
           </div>

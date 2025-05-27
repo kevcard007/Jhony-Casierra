@@ -22,7 +22,7 @@ interface AnnouncementCarouselProps {
 const getIcon = (iconName?: string) => {
   const iconProps = { 
     size: 16, 
-    className: "text-white mr-2 flex-shrink-0" 
+    className: "text-amber-400 mr-2 flex-shrink-0" // Cambiado a acento dorado
   };
   
   switch (iconName) {
@@ -83,11 +83,11 @@ export default function AnnouncementCarousel({
   }, [emblaApi, onSelect, autoplay, autoplayDelay]);
 
   return (
-    <div className="bg-black text-white py-2">
+    <div className="bg-[#0a0a0a] text-white py-3 border-b border-gray-700">
       <div className="container mx-auto flex items-center justify-between relative">
         <button
           onClick={scrollPrev}
-          className="text-white flex items-center justify-center z-10 hover:text-gray-300 transition-colors"
+          className="text-gray-300 flex items-center justify-center z-10 hover:text-amber-400 transition-colors duration-200 p-1 rounded-full hover:bg-gray-800/50"
           aria-label="Anterior anuncio"
         >
           <ChevronLeft size={20} />
@@ -102,10 +102,14 @@ export default function AnnouncementCarousel({
               >
                 <Link
                   href={slide.link}
-                  className="text-sm text-center tracking-wider uppercase hover:text-gray-300 transition-colors flex items-center justify-center"
+                  className="text-sm text-center tracking-wider uppercase hover:text-amber-400 transition-colors duration-200 flex items-center justify-center text-gray-300 group"
                 >
-                  {getIcon(slide.icon)}
-                  <span>{slide.text}</span>
+                  <span className="group-hover:scale-110 transition-transform duration-200">
+                    {getIcon(slide.icon)}
+                  </span>
+                  <span className="group-hover:tracking-widest transition-all duration-200">
+                    {slide.text}
+                  </span>
                 </Link>
               </div>
             ))}
@@ -114,12 +118,14 @@ export default function AnnouncementCarousel({
 
         <button
           onClick={scrollNext}
-          className="text-white flex items-center justify-center z-10 hover:text-gray-300 transition-colors"
+          className="text-gray-300 flex items-center justify-center z-10 hover:text-amber-400 transition-colors duration-200 p-1 rounded-full hover:bg-gray-800/50"
           aria-label="Siguiente anuncio"
         >
           <ChevronRight size={20} />
         </button>
       </div>
+
+
     </div>
   );
 }

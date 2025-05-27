@@ -21,9 +21,9 @@ export default function AddToCartButton({ artwork }: AddToCartButtonProps) {
   };
 
   return (
-    <>
+    <div className="space-y-4">
       <Button
-        className="w-full bg-black hover:bg-gray-800 text-white font-medium py-3"
+        className="w-full bg-amber-400 hover:bg-amber-300 text-black font-medium py-3 uppercase tracking-wider text-sm transition-all duration-200 border-0"
         size="lg"
         onClick={handleAddToCart}
       >
@@ -33,18 +33,18 @@ export default function AddToCartButton({ artwork }: AddToCartButtonProps) {
       <div className="grid grid-cols-2 gap-4">
         <Button
           variant="outline"
-          className="border-black hover:bg-gray-100"
+          className="bg-[#1a1a1a] border border-gray-700 text-white hover:bg-[#2a2a2a] hover:border-amber-400 hover:text-amber-400 transition-all duration-200 font-medium uppercase tracking-wider text-xs"
         >
           Hacer una consulta
         </Button>
 
         <Button
           variant="outline"
-          className="border-black hover:bg-gray-100"
+          className="bg-[#1a1a1a] border border-gray-700 text-white hover:bg-[#2a2a2a] hover:border-amber-400 hover:text-amber-400 transition-all duration-200 font-medium uppercase tracking-wider text-xs"
         >
           Reservar Obra de Arte
         </Button>
       </div>
-    </>
+    </div>
   );
 }

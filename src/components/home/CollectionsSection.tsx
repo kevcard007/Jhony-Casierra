@@ -27,7 +27,7 @@ export default function CollectionsSection({
   title,
   collections,
   className = "",
-  bgColor = "bg-[#333334]",
+  bgColor = "bg-[#1a1a1a]",
   showNavigation = true,
   autoplayDelay = 5000,
 }: CollectionsSectionProps) {
@@ -115,7 +115,7 @@ export default function CollectionsSection({
   return (
     <section className={`py-8 md:py-12 ${bgColor} text-white ${className}`}>
       <div className="container mx-auto px-4">
-        <h2 className="uppercase text-center font-serif text-xl md:text-2xl tracking-wider mb-8">
+        <h2 className="uppercase text-center font-serif text-xl md:text-2xl tracking-wider mb-8 text-white">
           {title}
         </h2>
 
@@ -125,7 +125,7 @@ export default function CollectionsSection({
             <div className="flex">
               {collections.map((collection) => (
                 <div key={collection.id} className="flex-[0_0_100%] min-w-0 md:flex-[0_0_50%] lg:flex-[0_0_25%] px-2">
-                  <Card className="bg-gray-300 border-0 overflow-hidden">
+                  <Card className="bg-[#2a2a2a] border border-gray-700 overflow-hidden hover:border-gray-600 transition-all duration-300 group">
                     <CardContent className="p-4">
                       <Link href={collection.link}>
                         <div className="relative">
@@ -138,10 +138,12 @@ export default function CollectionsSection({
                               sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                             />
                           </AspectRatio>
-                          <div className="absolute inset-0 flex items-end justify-center p-4">
-                            <h3 className="text-white uppercase text-sm md:text-base font-medium tracking-wider">
-                              {collection.title}
-                            </h3>
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent">
+                            <div className="absolute bottom-0 left-0 right-0 p-4">
+                              <h3 className="text-white uppercase text-sm md:text-base font-medium tracking-wider group-hover:text-amber-400 transition-colors duration-300">
+                                {collection.title}
+                              </h3>
+                            </div>
                           </div>
                         </div>
                       </Link>
@@ -157,7 +159,7 @@ export default function CollectionsSection({
             <>
               <button
                 onClick={scrollPrev}
-                className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/70 w-10 h-10 flex items-center justify-center rounded-full text-white"
+                className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-[#2a2a2a]/80 hover:bg-[#2a2a2a] border border-gray-700 hover:border-amber-400 w-10 h-10 flex items-center justify-center rounded-full text-gray-300 hover:text-amber-400 transition-all duration-200"
                 aria-label="Anterior"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
@@ -167,7 +169,7 @@ export default function CollectionsSection({
               
               <button
                 onClick={scrollNext}
-                className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/70 w-10 h-10 flex items-center justify-center rounded-full text-white"
+                className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-[#2a2a2a]/80 hover:bg-[#2a2a2a] border border-gray-700 hover:border-amber-400 w-10 h-10 flex items-center justify-center rounded-full text-gray-300 hover:text-amber-400 transition-all duration-200"
                 aria-label="Siguiente"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
@@ -178,17 +180,17 @@ export default function CollectionsSection({
           )}
         </div>
         
-        {/* Dots Navigation - Estilo similar a la imagen de referencia */}
+        {/* Dots Navigation - Elegante y dorado */}
         {scrollSnaps.length > 1 && (
-          <div className="flex justify-center mt-6 space-x-1">
+          <div className="flex justify-center mt-6 space-x-2">
             {scrollSnaps.map((_, index) => (
               <button
                 key={index}
                 onClick={() => scrollTo(index)}
-                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                className={`rounded-full transition-all duration-300 hover:scale-110 ${
                   index === selectedIndex 
-                    ? "bg-white w-4" // Punto activo más ancho
-                    : "bg-white/50" // Puntos inactivos
+                    ? "bg-amber-400 w-4 h-2" // Punto activo dorado y más ancho
+                    : "bg-gray-600 w-2 h-2 hover:bg-gray-500" // Puntos inactivos
                 }`}
                 aria-label={`Ir a slide ${index + 1}`}
               />

@@ -139,11 +139,11 @@ export default function AnimatedArtworkCard({
       custom={index}
     >
       <Link href={`/artwork/${slug}`} className="block">
-        {/* Marco gris con badges */}
-        <div className="bg-gray-200 p-6 rounded-sm relative">
+        {/* Marco oscuro elegante con badges */}
+        <div className="bg-[#2a2a2a] p-6 rounded-sm relative border border-[#374151]">
           {/* Badge de descuento - cajita roja llamativa */}
           {hasDiscount && discountPercentage && (
-            <div className="absolute top-2 left-2 bg-red-600 text-white px-2 py-1 text-xs font-bold uppercase tracking-wide z-10 shadow-lg">
+            <div className="absolute top-2 left-2 bg-[#dc2626] text-white px-2 py-1 text-xs font-bold uppercase tracking-wide z-10 shadow-lg">
               {discountPercentage}% DESCUENTO
             </div>
           )}
@@ -152,7 +152,7 @@ export default function AnimatedArtworkCard({
           {isUnavailable && <StatusBadge artwork={artworkData} />}
           
           {/* Contenedor de la imagen con overflow hidden para el efecto zoom */}
-          <div className="relative w-full aspect-square overflow-hidden">
+          <div className="relative w-full aspect-square overflow-hidden bg-[#1a1a1a]">
             <Image
               src={image}
               alt={title}
@@ -165,9 +165,9 @@ export default function AnimatedArtworkCard({
             
             {/* Overlay para obras no disponibles */}
             {isUnavailable && (
-              <div className="absolute inset-0 bg-white bg-opacity-50 flex items-center justify-center">
+              <div className="absolute inset-0 bg-[#0a0a0a] bg-opacity-70 flex items-center justify-center">
                 <div className="text-center">
-                  <div className="text-gray-600 font-medium text-sm uppercase tracking-wide">
+                  <div className="text-[#9ca3af] font-medium text-sm uppercase tracking-wide">
                     No Disponible
                   </div>
                 </div>
@@ -176,14 +176,14 @@ export default function AnimatedArtworkCard({
           </div>
         </div>
         
-        {/* Información del artwork */}
+        {/* Información del artwork - Dark */}
         <div className="mt-4 text-center">
-          <h3 className="text-black font-semibold text-sm mb-1 uppercase tracking-wide">
+          <h3 className="text-white font-semibold text-sm mb-1 uppercase tracking-wide">
             {title}
           </h3>
           
           {size && (
-            <p className="text-gray-600 text-xs mb-1">
+            <p className="text-[#9ca3af] text-xs mb-1">
               {size}
             </p>
           )}
@@ -191,27 +191,27 @@ export default function AnimatedArtworkCard({
           {/* Sistema de precios con descuento */}
           {hasDiscount && originalPrice && discountedPrice ? (
             <div className="space-y-1">
-              <p className="text-xs text-gray-400 line-through">{originalPrice}</p>
-              <p className="text-black font-semibold text-sm uppercase tracking-wide text-red-600">
+              <p className="text-xs text-[#9ca3af] line-through">{originalPrice}</p>
+              <p className="text-[#fbbf24] font-semibold text-sm uppercase tracking-wide">
                 {discountedPrice}
               </p>
             </div>
           ) : (
-            <p className="text-black font-semibold text-sm mb-1 uppercase tracking-wide">
+            <p className="text-white font-semibold text-sm mb-1 uppercase tracking-wide">
               {price}
             </p>
           )}
           
           {/* Información de stock */}
           {stockText && (
-            <p className={`text-xs mt-1 font-medium ${stockClassName}`}>
+            <p className={`text-xs mt-1 font-medium ${stockClassName.replace('text-green-600', 'text-green-400').replace('text-red-600', 'text-red-400').replace('text-orange-600', 'text-orange-400').replace('text-yellow-600', 'text-yellow-400')}`}>
               {stockText}
             </p>
           )}
           
           {/* Fecha de venta para obras vendidas */}
           {soldDate && status === 'sold' && (
-            <p className="text-xs text-gray-400 mt-1">
+            <p className="text-xs text-[#9ca3af] mt-1">
               Vendido {soldDate.toLocaleDateString('es-ES', { 
                 year: 'numeric', 
                 month: 'short', 

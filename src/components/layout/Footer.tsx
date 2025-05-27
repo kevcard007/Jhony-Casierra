@@ -115,7 +115,7 @@ export default function Footer() {
 
           {/* Copyright - Actualizado */}
           <div className="text-center text-xs text-gray-400">
-            <p>© KevAcademy {currentYear} - Todos los derechos reservados</p>
+            <p>© Jhony Casierra {currentYear} - Todos los derechos reservados</p>
             <p>Guadalajara de Buga, Colombia</p>
             <p className="mt-1 text-gray-500">
               Arte Contemporáneo • Sitio web actualizado: {new Date().toLocaleDateString('es-ES')}
