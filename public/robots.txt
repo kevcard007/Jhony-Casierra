@@ -1,0 +1,54 @@
+User-agent: *
+Allow: /
+
+# Permitir indexación de todas las páginas importantes
+Allow: /about
+Allow: /contact
+Allow: /collections
+Allow: /artwork/*
+Allow: /galeria
+
+# Páginas adicionales permitidas
+Allow: /certificado-originalidad
+
+# Bloquear archivos y directorios innecesarios para SEO
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /private/
+Disallow: /*.json$
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /thank-you/
+
+# Bloquear archivos técnicos
+Disallow: /robots.txt
+Disallow: /sitemap.xml
+Disallow: /*.xml$
+Disallow: /*.txt$
+
+# Permitir recursos importantes para SEO
+Allow: /favicon.ico
+Allow: /images/
+Allow: /icons/
+
+# Configuración específica para bots de imágenes
+User-agent: Googlebot-Image
+Allow: /images/
+Allow: /_next/static/media/
+
+# Configuración para bots de redes sociales
+User-agent: facebookexternalhit
+Allow: /
+Allow: /images/
+
+User-agent: Twitterbot
+Allow: /
+Allow: /images/
+
+# Sitemap location
+Sitemap: https://jhonycasierra.com/sitemap.xml
+
+# Crawl delay - 1 segundo está perfecto para un sitio de arte
+Crawl-delay: 1

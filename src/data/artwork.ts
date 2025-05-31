@@ -46,7 +46,7 @@ export const featuredArtwork: Artwork[] = [
   },
   {
     id: "fa2",
-    title: "ABSTRACTO",
+    title: "ENTROPIA",
     image: "/images/artwork2.png", 
     price: "$150000",
     originalPrice: "$300000",
@@ -130,7 +130,7 @@ export const featuredArtwork: Artwork[] = [
 export const studioWorks: Artwork[] = [
   {
     id: "sw1",
-    title: "LA GRAN OLA",
+    title: "IMPOSICION",
     image: "/images/artwork5.png",
     price: "$120000", // 50% descuento
     originalPrice: "$240000",
@@ -146,7 +146,7 @@ export const studioWorks: Artwork[] = [
   },
   {
     id: "sw2", 
-    title: "SONÁMBULO",
+    title: "OSCURIDAD",
     image: "/images/artwork6.png",
     price: "$90000", // 50% descuento
     originalPrice: "$180000",
@@ -162,7 +162,7 @@ export const studioWorks: Artwork[] = [
   },
   {
     id: "sw3",
-    title: "TRANQUILIDAD", 
+    title: "ESTADO ONIRICO", 
     image: "/images/artwork7.png",
     price: "$130000", // 50% descuento
     originalPrice: "$260000",
@@ -194,7 +194,7 @@ export const studioWorks: Artwork[] = [
   },
   {
     id: "sw5",
-    title: "TODO LO VE",
+    title: "OBSESION",
     image: "/images/artwork9.png",
     price: "$120000", // 50% descuento
     originalPrice: "$240000",
@@ -214,7 +214,7 @@ export const studioWorks: Artwork[] = [
 export const limitedEditionPrints: Artwork[] = [
   {
     id: "lep1",
-    title: "MANHATTAN SKYLINE",
+    title: "LLUVIA",
     image: "/images/artwork10.png",
     price: "$60000", // 50% descuento
     originalPrice: "$120000",
@@ -230,7 +230,7 @@ export const limitedEditionPrints: Artwork[] = [
   },
   {
     id: "lep2", 
-    title: "VENETIAN ROMANCE",
+    title: "FLOR ECLOSIONADA",
     image: "/images/artwork11.png",
     price: "$60000", // 50% descuento
     originalPrice: "$120000",
@@ -246,7 +246,7 @@ export const limitedEditionPrints: Artwork[] = [
   },
   {
     id: "lep3",
-    title: "LONDON FUSION", 
+    title: "NO LIBERTAD", 
     image: "/images/artwork4.png",
     price: "$70000", // 50% descuento
     originalPrice: "$140000",
@@ -278,7 +278,7 @@ export const limitedEditionPrints: Artwork[] = [
   },
   {
     id: "lep5",
-    title: "VIBRANT BARCELONA",
+    title: "MAR Y PLAYA",
     image: "/images/artwork12.png",
     price: "$120000", // 50% descuento
     originalPrice: "$240000",

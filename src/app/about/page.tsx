@@ -1,8 +1,57 @@
+import type { Metadata } from 'next'
 import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
 import CollectionsSection from "@/components/home/CollectionsSection";
 import { collections } from "@/data/artwork";
+
+// SEO Metadata para About
+export const metadata: Metadata = {
+  title: 'Acerca de Jhony Casierra - Artista Contemporáneo Colombiano',
+  description: 'Conoce la historia de Jhony Casierra, artista contemporáneo de Buga, Colombia. Descubre su técnica húmedo sobre húmedo y su filosofía artística única.',
+  keywords: [
+    'Jhony Casierra biografía',
+    'artista colombiano',
+    'pintor contemporáneo',
+    'arte Buga Colombia',
+    'técnica húmedo sobre húmedo',
+    'artista Valle del Cauca',
+    'pintura expresiva',
+    'arte imperfección',
+    'filosofía artística'
+  ],
+  authors: [{ name: 'Jhony Casierra', url: 'https://jhonycasierra.com' }],
+  metadataBase: new URL('https://jhonycasierra.com'),
+  alternates: {
+    canonical: '/about',
+  },
+  openGraph: {
+    title: 'Acerca de Jhony Casierra - Artista Contemporáneo Colombiano',
+    description: 'Conoce la historia y filosofía artística de Jhony Casierra, artista de Buga especializado en técnica húmedo sobre húmedo.',
+    url: 'https://jhonycasierra.com/about',
+    siteName: 'Jhony Casierra Art',
+    images: [
+      {
+        url: '/images/jhony-artist-portrait.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Jhony Casierra en su estudio de arte',
+      },
+    ],
+    locale: 'es_CO',
+    type: 'profile',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Acerca de Jhony Casierra - Artista Contemporáneo',
+    description: 'Historia y filosofía del artista colombiano Jhony Casierra',
+    images: ['/images/jhony-artist-portrait.jpg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+}
 
 export default function AboutPage() {
   return (

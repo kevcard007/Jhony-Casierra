@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import AnimatedHeroBanner from "@/components/home/AnimatedHeroBanner";
 import CollectionsSection from "@/components/home/CollectionsSection";
 import AnimatedSection from "@/components/animations/AnimatedSection";
@@ -10,13 +11,84 @@ import { motion } from "framer-motion";
 // Importar el AnimatedArtworkGrid que mantiene las animaciones CON el sistema de ventas
 import AnimatedArtworkGrid from "@/components/artwork/AnimatedArtworkGrid";
 
+// SEO Metadata
+export const metadata: Metadata = {
+  title: 'Jhony Casierra - Arte Contemporáneo Colombiano | Obras Originales',
+  description: 'Descubre las obras originales de Jhony Casierra, artista contemporáneo colombiano. Pinturas únicas con técnica húmedo sobre húmedo. Arte urbano y paisajes expresivos.',
+  keywords: [
+    'arte contemporáneo',
+    'pintura colombiana', 
+    'Jhony Casierra',
+    'obras originales',
+    'arte urbano',
+    'técnica húmedo sobre húmedo',
+    'pintura expresiva',
+    'artista colombiano',
+    'arte Buga',
+    'paisajes urbanos'
+  ],
+  authors: [{ name: 'Jhony Casierra', url: 'https://jhonycasierra.com' }],
+  creator: 'Jhony Casierra',
+  publisher: 'Jhony Casierra Art Studio',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL('https://jhonycasierra.com'), // Cambiar por tu dominio real
+  alternates: {
+    canonical: '/',
+    languages: {
+      'es-CO': '/',
+      'es': '/',
+    },
+  },
+  openGraph: {
+    title: 'Jhony Casierra - Arte Contemporáneo Colombiano',
+    description: 'Obras originales de arte contemporáneo. Técnica única húmedo sobre húmedo. Artista colombiano con base en Buga.',
+    url: 'https://jhonycasierra.com',
+    siteName: 'Jhony Casierra Art',
+    images: [
+      {
+        url: '/images/og-image.jpg', // Crearemos esta imagen
+        width: 1200,
+        height: 630,
+        alt: 'Obra de arte de Jhony Casierra',
+      },
+    ],
+    locale: 'es_CO',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Jhony Casierra - Arte Contemporáneo Colombiano',
+    description: 'Obras originales de arte contemporáneo con técnica húmedo sobre húmedo',
+    images: ['/images/og-image.jpg'],
+    creator: '@jhonycasierra', // Si tienes Twitter
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: 'GOOGLE_VERIFICATION_ID', // Lo configuraremos después
+  },
+}
+
 // Collecciones locales (renombradas para evitar conflicto)
 const localCollections = [
   {
     id: "1",
-    title: "LONDON",
-    image: "/images/collection1.png",
-    link: "/collections/london",
+    title: "INTROVERTIDO",
+    image: "/images/jhonycollection.png",
+    link: "/collections",
   },
   {
     id: "2",
@@ -84,13 +156,13 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="flex flex-col sm:flex-row justify-center items-center gap-2 sm:gap-4 mt-2">
             <Link 
-              href="/buy-original" 
+              href="/galeria" 
               className="bg-[#fbbf24] text-[#0a0a0a] text-xs sm:text-sm px-4 py-2 font-medium hover:bg-[#f59e0b] transition-colors uppercase tracking-wide"
             >
               COMPRAR PINTURAS ORIGINALES
             </Link>
             <Link 
-              href="/buy-prints" 
+              href="/galeria" 
               className="bg-white text-[#0a0a0a] text-xs sm:text-sm px-4 py-2 font-medium hover:bg-[#d1d5db] transition-colors uppercase tracking-wide"
             >
               COMPRAR PINTURAS DE EDICION LIMITADA
@@ -200,9 +272,9 @@ export default function Home() {
 
             <AnimatedSection delay={0.4}>
               <div className="flex flex-wrap justify-center gap-4">
-                <Link href="/original-artworks" className="pk-read-more bg-[#fbbf24] text-[#0a0a0a] hover:bg-[#f59e0b] px-6 py-3 uppercase tracking-wide font-medium transition-colors">PINTURAS ORIGINALES</Link>
-                <Link href="/limited-edition-prints" className="pk-read-more bg-white text-[#0a0a0a] hover:bg-[#d1d5db] px-6 py-3 uppercase tracking-wide font-medium transition-colors">EDICIONES LIMITADAS IMPRESAS</Link>
-                <Link href="/print-collection-sets" className="pk-read-more border border-[#374151] text-white hover:bg-[#2a2a2a] px-6 py-3 uppercase tracking-wide font-medium transition-colors">CONJUNTO DE COLECCIÓN</Link>
+                <Link href="/galeria" className="pk-read-more bg-[#fbbf24] text-[#0a0a0a] hover:bg-[#f59e0b] px-6 py-3 uppercase tracking-wide font-medium transition-colors">PINTURAS ORIGINALES</Link>
+                <Link href="/galeria" className="pk-read-more bg-white text-[#0a0a0a] hover:bg-[#d1d5db] px-6 py-3 uppercase tracking-wide font-medium transition-colors">EDICIONES LIMITADAS IMPRESAS</Link>
+                <Link href="/galeria" className="pk-read-more border border-[#374151] text-white hover:bg-[#2a2a2a] px-6 py-3 uppercase tracking-wide font-medium transition-colors">CONJUNTO DE COLECCIÓN</Link>
               </div>
             </AnimatedSection>
           </div>
@@ -248,7 +320,7 @@ export default function Home() {
                 <p className="text-sm text-[#d1d5db] mb-4 leading-relaxed">
                   Disponemos de una variedad de sets enmarcados que ejemplifican a la perfección los diferentes temas. Jhony se inspira en lugares como Londres, París, Venecia, Nueva York y otros lugares para su icónica colección de grabados.
                 </p>
-                <Link href="/print-sets" className="inline-block bg-[#fbbf24] text-[#0a0a0a] px-4 py-2 text-sm font-medium hover:bg-[#f59e0b] transition-colors uppercase tracking-wide">LEER MÁS</Link>
+                <Link href="/galeria" className="inline-block bg-[#fbbf24] text-[#0a0a0a] px-4 py-2 text-sm font-medium hover:bg-[#f59e0b] transition-colors uppercase tracking-wide">LEER MÁS</Link>
               </div>
             </AnimatedSection>
           </div>
