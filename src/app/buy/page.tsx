@@ -93,15 +93,15 @@ export default function Home() {
             {/* Timepieces Section */}
             <AnimatedSection direction="left" delay={0.1}>
               <div className="bg-[#2a2a2a] p-6 border border-gray-700 hover:border-gray-600 transition-colors duration-200">
-                <h3 className="font-serif text-lg mb-4 text-white">Relojes Jhony Casierra a medida</h3>
+                <h3 className="font-serif text-lg mb-4 text-white">Certificado de Originalidad</h3>
                 <p className="text-sm text-gray-400 mb-4 uppercase tracking-wide">
-                  JHONY CASIERRA REÚNE UNA SERIE DE ESFERAS DE RELOJ PARA CREAR RELOJES PERSONALIZADOS.
+                  CADA OBRA INCLUYE CERTIFICADO DE AUTENTICIDAD CON SELLO DEL ARTISTA.
                 </p>
                 <p className="text-sm text-gray-300 mb-4 leading-relaxed">
-                En una colaboración exclusiva, Jowissa Watchmakers (fundada en 1951) se asoció con Jhony para crear dos colecciones de edición limitada de relojes distintivos, pintados a mano y fabricados en Suiza.
+                Todas nuestras obras originales y ediciones limitadas incluyen un certificado de originalidad firmado y sellado por Jhony Casierra. Este documento garantiza la autenticidad de la pieza y su procedencia directa del estudio del artista.
                 </p>
                 <Link 
-                  href="/timepieces" 
+                  href="/certificado-originalidad" 
                   className="inline-block px-4 py-2 bg-[#1a1a1a] border border-gray-700 text-white uppercase tracking-wider text-xs hover:bg-[#0a0a0a] hover:border-amber-400 hover:text-amber-400 transition-all duration-200 font-medium mt-2"
                 >
                   LEER MAS

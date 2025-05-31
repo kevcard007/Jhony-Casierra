@@ -99,6 +99,30 @@ export default function Home() {
         </div>
       </div>
 
+      {/* Frase Cursiva Destacada */}
+      <section className="py-16 md:py-20 bg-[#0a0a0a]">
+        <div className="container mx-auto px-4">
+          <AnimatedSection>
+            <div className="max-w-4xl mx-auto text-center">
+              <blockquote className="relative">
+                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-6">
+                  <div className="w-16 h-px bg-[#fbbf24]"></div>
+                </div>
+                <p className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-serif italic text-white leading-relaxed tracking-wide px-4">
+                  "Si buscas la perfección, estás en el lugar equivocado."
+                </p>
+                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-6">
+                  <div className="w-16 h-px bg-[#fbbf24]"></div>
+                </div>
+              </blockquote>
+              <cite className="block mt-12 text-[#fbbf24] font-medium uppercase tracking-wider text-sm">
+                — Jhony Casierra
+              </cite>
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
       {/* About Paul Section - Dark */}
       <section className="py-12 bg-[#0a0a0a]">
         <div className="container mx-auto px-4">
@@ -204,15 +228,15 @@ export default function Home() {
           </AnimatedSection>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Timepieces Section */}
+            {/* Certificado de Originalidad Section */}
             <AnimatedSection direction="left" delay={0.1}>
               <div className="bg-[#2a2a2a] p-6 border border-[#374151]">
-                <h3 className="font-serif text-lg mb-4 text-white">Relojes Jhony Casierra a medida</h3>
-                <p className="text-sm text-[#9ca3af] mb-4 uppercase tracking-wide">JHONY CASIERRA REÚNE UNA SERIE DE ESFERAS DE RELOJ PARA CREAR RELOJES PERSONALIZADOS.</p>
+                <h3 className="font-serif text-lg mb-4 text-white">Certificado de Originalidad</h3>
+                <p className="text-sm text-[#9ca3af] mb-4 uppercase tracking-wide">CADA OBRA INCLUYE CERTIFICADO DE AUTENTICIDAD CON SELLO DEL ARTISTA.</p>
                 <p className="text-sm text-[#d1d5db] mb-4 leading-relaxed">
-                  En una colaboración exclusiva, los fabricantes de relojes crean colecciones de edición limitada de relojes distintivos, pintados a mano.
+                  Todas nuestras obras originales y ediciones limitadas incluyen un certificado de originalidad firmado y sellado por Jhony Casierra. Este documento garantiza la autenticidad de la pieza y su procedencia directa del estudio del artista.
                 </p>
-                <Link href="/timepieces" className="inline-block bg-[#fbbf24] text-[#0a0a0a] px-4 py-2 text-sm font-medium hover:bg-[#f59e0b] transition-colors uppercase tracking-wide">LEER MÁS</Link>
+                <Link href="/certificado-originalidad" className="inline-block bg-[#fbbf24] text-[#0a0a0a] px-4 py-2 text-sm font-medium hover:bg-[#f59e0b] transition-colors uppercase tracking-wide">LEER MÁS</Link>
               </div>
             </AnimatedSection>
 

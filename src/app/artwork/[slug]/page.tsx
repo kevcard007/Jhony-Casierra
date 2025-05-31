@@ -25,8 +25,8 @@ export function generateStaticParams() {
   }));
 }
 
-export default function ArtworkPage({ params }: ArtworkPageProps) {
-  const { slug } = params;
+export default async function ArtworkPage({ params }: ArtworkPageProps) {
+  const { slug } = await params;
 
   // Find the artwork by slug
   const artwork = allArtworks.find((item) => item.slug === slug);
@@ -52,6 +52,43 @@ export default function ArtworkPage({ params }: ArtworkPageProps) {
 
   return (
     <div className="bg-[#0a0a0a] min-h-screen text-white">
+      {/* Hero Section con imagen de fondo - VIEWPORT COMPLETO SIN ESPACIOS */}
+      <section className="relative h-[50vh] md:h-[60vh] w-screen overflow-hidden" style={{ marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)', maxWidth: '100vw' }}>
+        {/* Imagen de fondo - COBERTURA MÁXIMA */}
+        <div className="absolute inset-0 w-full h-full">
+          <Image
+            src={artwork.image}
+            alt={artwork.title}
+            fill
+            className="w-full h-full"
+            sizes="100vw"
+            priority
+            style={{
+              objectFit: 'cover',
+              objectPosition: 'center'
+            }}
+          />
+        </div>
+        
+        {/* Overlay más sutil */}
+        <div className="absolute inset-0 bg-black/30 w-full h-full"></div>
+        
+        {/* Contenido del overlay - RESPONSIVE: Desktop derecha, Móvil centrado abajo */}
+        <div className="relative z-10 h-full flex items-end justify-center pb-8 md:items-center md:justify-end md:pr-16 md:pb-0 w-full">
+          <div className="bg-black/70 backdrop-blur-sm px-6 py-4 md:px-12 md:py-8 text-center md:text-right max-w-sm md:max-w-2xl mx-4 md:mx-0">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-serif italic text-white mb-3 md:mb-4 uppercase tracking-wider border-b-2 border-white pb-1 md:pb-2 inline-block">
+              "{artwork.title}"
+            </h1>
+            <p className="text-xs md:text-sm lg:text-base text-white leading-relaxed mt-4 md:mt-6">
+              Representar en este cuadro el caos que vivimos todas las personas en este 
+              mundo día a día y los puntos amarillos somos nosotros siempre tratando 
+              de guardar la calma y ordenando todo en nuestras vidas
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Contenido principal de la página - CON container normal */}
       <div className="container mx-auto px-4 py-8 md:py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
           {/* Artwork Image with Lightbox */}
@@ -93,9 +130,9 @@ export default function ArtworkPage({ params }: ArtworkPageProps) {
             </div>
 
             <div>
-              <h1 className="text-2xl md:text-3xl font-serif tracking-wide mb-2 text-white">
+              <h2 className="text-2xl md:text-3xl font-serif tracking-wide mb-2 text-white uppercase">
                 {artwork.title}
-              </h1>
+              </h2>
               
               {/* Sistema de precios con descuento */}
               {artwork.hasDiscount && artwork.originalPrice && artwork.discountedPrice ? (
@@ -139,7 +176,7 @@ export default function ArtworkPage({ params }: ArtworkPageProps) {
 
             <div className="space-y-4">
               <div>
-                <h2 className="font-medium text-lg mb-2 text-white">Detalles</h2>
+                <h3 className="font-medium text-lg mb-2 text-white">Detalles</h3>
                 <ul className="space-y-2 text-sm">
                   <li><span className="font-medium text-amber-400">Tamaño:</span> <span className="text-gray-300">{artwork.size}</span></li>
                   <li><span className="font-medium text-amber-400">Tipo:</span> <span className="text-gray-300">{artwork.type}</span></li>
@@ -192,7 +229,7 @@ export default function ArtworkPage({ params }: ArtworkPageProps) {
 
         {/* Description Section */}
         <div className="mt-12 max-w-4xl mx-auto">
-          <h2 className="text-xl md:text-2xl font-serif mb-4 text-white">Acerca de esta obra de arte</h2>
+          <h3 className="text-xl md:text-2xl font-serif mb-4 text-white">Acerca de esta obra de arte</h3>
           <div className="prose max-w-none">
             <p className="text-gray-300 leading-relaxed mb-4">
               El estilo distintivo de Jhony Casierra captura la atmósfera y el estado de ánimo de los paisajes urbanos.
@@ -209,7 +246,7 @@ export default function ArtworkPage({ params }: ArtworkPageProps) {
             {/* Información adicional sobre descuentos */}
             {artwork.hasDiscount && (
               <div className="bg-[#1a1a1a] border border-red-600 p-4 mt-4">
-                <h3 className="font-bold text-red-400 mb-2">🔥 Oferta Especial</h3>
+                <h4 className="font-bold text-red-400 mb-2">🔥 Oferta Especial</h4>
                 <p className="text-gray-300">
                   Esta obra está actualmente en promoción con un <strong className="text-amber-400">{artwork.discountPercentage}% de descuento</strong>. 
                   Una oportunidad única para adquirir arte original de Jhony Casierra a un precio especial.
@@ -222,9 +259,9 @@ export default function ArtworkPage({ params }: ArtworkPageProps) {
         {/* Related Artworks - Solo mostrar obras disponibles */}
         {relatedArtworks.filter(item => item.status === 'available').length > 0 && (
           <div className="mt-16">
-            <h2 className="text-xl md:text-2xl font-serif text-center mb-8 text-white">
+            <h3 className="text-xl md:text-2xl font-serif text-center mb-8 text-white">
               También deberías ver
-            </h2>
+            </h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {relatedArtworks
                 .filter(item => item.status === 'available')
@@ -251,7 +288,7 @@ export default function ArtworkPage({ params }: ArtworkPageProps) {
                     />
                   </div>
                   <div className="text-center mt-2">
-                    <h3 className="text-sm font-medium truncate text-white group-hover:text-amber-400 transition-colors duration-200">{item.title}</h3>
+                    <h4 className="text-sm font-medium truncate text-white group-hover:text-amber-400 transition-colors duration-200">{item.title}</h4>
                     {item.hasDiscount && item.originalPrice && item.discountedPrice ? (
                       <div className="space-y-0.5">
                         <p className="text-xs text-gray-500 line-through">{item.originalPrice}</p>
