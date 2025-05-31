@@ -122,7 +122,7 @@ export const featuredArtwork: Artwork[] = [
     slug: "lo-absurdo",
     status: "sold",
     soldDate: new Date('2024-03-15'),
-    quantity: 1,
+    quantity: 0,
     maxQuantity: 1,
   },
 ];
@@ -189,8 +189,8 @@ export const studioWorks: Artwork[] = [
     size: "70 × 50 cm",
     type: "Original Art",
     slug: "lo-absurdo",
-    status: "available",
-    quantity: 1,
+    status: "sold",
+    quantity: 0,
     maxQuantity: 1,
   },
   {

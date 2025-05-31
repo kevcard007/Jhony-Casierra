@@ -60,7 +60,7 @@ export default function Home() {
                   href="/galeria" 
                   className="px-6 py-3 bg-[#1a1a1a] border border-gray-700 text-white uppercase tracking-wider text-sm hover:bg-[#2a2a2a] hover:border-amber-400 hover:text-amber-400 transition-all duration-200 font-medium"
                 >
-                  EDICIONES LIMITADAS IMPRESAS
+                  EDICIONES LIMITADAS
                 </Link>
                 <Link 
                   href="/galeria" 
