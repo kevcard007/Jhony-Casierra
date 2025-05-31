@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
   // Agregar verificación de Google Search Console
   verification: {
-    google: '8384beb8988cdce9',
+    google: '1zXIbZp-i_8LUum1WRCy57JW2ALkQ3i2DliwzTeDRV4',
   },
   // Metadatos adicionales para SEO
   metadataBase: new URL('https://jhonycasierra.com'),
