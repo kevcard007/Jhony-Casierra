@@ -1,6 +1,7 @@
 import "@/app/globals.css";
 import { Inter, Playfair_Display } from "next/font/google";
 import type { Metadata } from "next";
+import Head from "next/head";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import AnnouncementCarousel from '@/components/layout/AnnouncementCarousel';
@@ -25,6 +26,41 @@ export const metadata: Metadata = {
     icon: '/images/favicon.ico.png',
     apple: '/apple-touch-icon.png',
   },
+  // Agregar verificación de Google Search Console
+  verification: {
+    google: '8384beb8988cdce9',
+  },
+  // Metadatos adicionales para SEO
+  metadataBase: new URL('https://jhonycasierra.com'),
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    title: 'Jhony Casierra | Artista Contemporáneo Colombiano',
+    description: 'Descubre las obras únicas de Jhony Casierra, artista contemporáneo especializado en técnica húmedo sobre húmedo.',
+    url: 'https://jhonycasierra.com',
+    siteName: 'Jhony Casierra Art',
+    images: [
+      {
+        url: '/images/jhony-artist-portrait.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Jhony Casierra - Artista Contemporáneo Colombiano',
+      },
+    ],
+    locale: 'es_CO',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Jhony Casierra | Artista Contemporáneo',
+    description: 'Arte contemporáneo colombiano con técnica húmedo sobre húmedo',
+    images: ['/images/jhony-artist-portrait.jpg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
@@ -33,7 +69,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="es" className="dark">
+      <head>
+        {/* Meta tag adicional para Google Search Console (backup) */}
+        <meta name="google-site-verification" content="8384beb8988cdce9" />
+      </head>
       <body
         className={`${inter.variable} ${playfair.variable} font-sans min-h-screen flex flex-col bg-[#0a0a0a] text-white`}
       >
