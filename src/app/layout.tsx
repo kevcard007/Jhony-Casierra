@@ -70,7 +70,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className="dark">
-      
+      <head>
+        {/* Meta tag adicional para Google Search Console (backup) */}
+        <meta name="google-site-verification" content="1zXIbZp-i_8LUum1WRCy57JW2ALkQ3i2DliwzTeDRV4" />
+      </head>
       <body
         className={`${inter.variable} ${playfair.variable} font-sans min-h-screen flex flex-col bg-[#0a0a0a] text-white`}
       >
