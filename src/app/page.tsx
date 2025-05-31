@@ -78,7 +78,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: 'GOOGLE_VERIFICATION_ID', // Lo configuraremos después
+    // Lo configuraremos después
   },
 }
 
