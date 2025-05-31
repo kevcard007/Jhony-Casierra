@@ -251,7 +251,7 @@ export default function CollectionsPage() {
             {/* City Collections */}
             <div className="mt-12">
               <h2 className="uppercase text-center font-serif text-xl md:text-2xl tracking-wider mb-8 text-white">
-                Colecciones de Ciudades
+                colecciones
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
                 {collections.map((collection) => (
