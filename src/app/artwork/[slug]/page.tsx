@@ -191,10 +191,7 @@ export default async function ArtworkPage({ params }: ArtworkPageProps) {
     .slice(0, 4);
 
   // For demo purposes, create additional views of the artwork
-  const additionalImages = [
-    artwork.image,
-    relatedArtworks.length > 0 ? relatedArtworks[0].image : artwork.image,
-  ];
+  const additionalImages: string[] = [];
 
   // Verificar si la obra está disponible
   const isAvailable = artwork.status === 'available' && (artwork.quantity || 0) > 0;

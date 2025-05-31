@@ -90,36 +90,7 @@ const localCollections = [
     image: "/images/jhonycollection.png",
     link: "/collections",
   },
-  {
-    id: "2",
-    title: "NEW YORK",
-    image: "/images/collection2.png",
-    link: "/collections/new-york",
-  },
-  {
-    id: "3",
-    title: "PARIS", 
-    image: "/images/collection3.png",
-    link: "/collections/paris",
-  },
-  {
-    id: "4",
-    title: "CITYSCAPES",
-    image: "/images/collection4.png",
-    link: "/collections/cityscapes",
-  },
-  {
-    id: "5",
-    title: "LANDSCAPES",
-    image: "/images/collection1.png",
-    link: "/collections/landscapes",
-  },
-  {
-    id: "6",
-    title: "RETRO",
-    image: "/images/collection2.png",
-    link: "/collections/retro",
-  },
+  
 ];
 
 export default function Home() {
@@ -188,7 +159,7 @@ export default function Home() {
                 </div>
               </blockquote>
               <cite className="block mt-12 text-[#fbbf24] font-medium uppercase tracking-wider text-sm">
-                — Jhony Casierra
+                — Jhony Casierra —
               </cite>
             </div>
           </AnimatedSection>
@@ -245,7 +216,7 @@ export default function Home() {
       {/* Limited Edition Prints Section - ACTUALIZADO CON SISTEMA DE VENTAS */}
       <div className="bg-[#0a0a0a]">
         <AnimatedArtworkGrid
-          title="IMPRESIONES EDICION LIMITADA"
+          title="OBRAS DE ARTE ORIGINALES Y EDICIONES LIMITADAS"
           artworks={limitedEditionPrints}
           showOnlyAvailable={true} // Solo mostrar prints disponibles
           showMoreLink="/galeria"
