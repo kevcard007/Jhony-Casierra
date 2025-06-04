@@ -202,7 +202,7 @@ export default function Home() {
       </div>
 
       {/* Studio Works Section - ACTUALIZADO CON SISTEMA DE VENTAS */}
-      <div className="bg-[#1a1a1a]">
+      {/*<div className="bg-[#1a1a1a]">
         <AnimatedArtworkGrid
           title="GRANDES OBRAS"
           artworks={studioWorks}
@@ -211,7 +211,7 @@ export default function Home() {
           showMoreText="VER TODAS LAS GRANDES OBRAS"
           className="bg-[#1a1a1a]"
         />
-      </div>
+      </div>*/}
 
       {/* Limited Edition Prints Section - ACTUALIZADO CON SISTEMA DE VENTAS */}
       <div className="bg-[#0a0a0a]">

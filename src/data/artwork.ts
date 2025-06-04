@@ -120,9 +120,25 @@ export const featuredArtwork: Artwork[] = [
     size: "70 × 50 cm",
     type: "Original Art",
     slug: "lo-absurdo",
-    status: "sold",
+    status: "sold", // VENDIDO
     soldDate: new Date('2024-03-15'),
     quantity: 0,
+    maxQuantity: 1,
+  },
+  {
+    id: "fa7",
+    title: "ESTADO ONIRICO",
+    image: "/images/artwork7.png", 
+    price: "$130000", // 50% descuento
+    originalPrice: "$260000",
+    discountedPrice: "$130000",
+    discountPercentage: 50,
+    hasDiscount: true,
+    size: "60 × 50 cm",
+    type: "Original Art",
+    slug: "estado-onirico",
+    status: "available", 
+    quantity: 1,
     maxQuantity: 1,
   },
 ];
@@ -158,39 +174,6 @@ export const studioWorks: Artwork[] = [
     type: "Original Art",
     slug: "sonambulo",
     status: "available", 
-    quantity: 1,
-    maxQuantity: 1,
-  },
-  {
-    id: "sw3",
-    title: "ESTADO ONIRICO", 
-    image: "/images/artwork7.png",
-    price: "$130000", // 50% descuento
-    originalPrice: "$260000",
-    discountedPrice: "$130000",
-    discountPercentage: 50,
-    hasDiscount: true,
-    size: "60 × 50 cm",
-    type: "Original Art",
-    slug: "tranquilidad",
-    status: "available", // DISPONIBLE
-    quantity: 1,
-    maxQuantity: 1,
-  },
-  
-  {
-    id: "sw5",
-    title: "OBSESION",
-    image: "/images/artwork9.png",
-    price: "$120000", // 50% descuento
-    originalPrice: "$240000",
-    discountedPrice: "$120000",
-    discountPercentage: 50,
-    hasDiscount: true,
-    size: "40 × 30 cm",
-    type: "Original Art",
-    slug: "shine-city-new-york", 
-    status: "available",
     quantity: 1,
     maxQuantity: 1,
   },
@@ -232,46 +215,14 @@ export const limitedEditionPrints: Artwork[] = [
   },
   {
     id: "lep3",
-    title: "NO LIBERTAD", 
-    image: "/images/artwork4.png",
-    price: "$70000", // 50% descuento
-    originalPrice: "$140000",
-    discountedPrice: "$70000",
+    title: "MAR Y PLAYA",
+    image: "/images/artwork12.png",
+    price: "$60000", // 50% descuento
+    originalPrice: "$120000",
+    discountedPrice: "$60000",
     discountPercentage: 50,
     hasDiscount: true,
     size: "35 × 25 cm",
-    type: "Limited Edition Print",
-    slug: "london-fusion",
-    status: "available", // DISPONIBLE
-    quantity: 1,
-    maxQuantity: 1,
-  },
-  {
-    id: "lep4",
-    title: "PARIS AT DUSK",
-    image: "/images/artwork3.png",
-    price: "$80000", // 50% descuento
-    originalPrice: "$160000",
-    discountedPrice: "$80000",
-    discountPercentage: 50,
-    hasDiscount: true,
-    size: "60 × 60 cm", 
-    type: "Limited Edition Print",
-    slug: "paris-at-dusk",
-    status: "available",
-    quantity: 1,
-    maxQuantity: 1,
-  },
-  {
-    id: "lep5",
-    title: "MAR Y PLAYA",
-    image: "/images/artwork12.png",
-    price: "$120000", // 50% descuento
-    originalPrice: "$240000",
-    discountedPrice: "$120000",
-    discountPercentage: 50,
-    hasDiscount: true,
-    size: "60 × 60 cm",
     type: "Limited Edition Print",
     slug: "vibrant-barcelona",
     status: "available", // DISPONIBLE
@@ -283,28 +234,10 @@ export const limitedEditionPrints: Artwork[] = [
 // Collections (sin cambios)
 export const collections: Collection[] = [
   {
-    id: "col1",
-    title: "LONDON",
-    image: "/images/collection1.png",
-    link: "/collections/london",
-  },
-  {
-    id: "col2",
-    title: "NEW YORK", 
-    image: "/images/collection2.png",
-    link: "/collections/new-york",
-  },
-  {
-    id: "col3",
-    title: "PARIS",
-    image: "/images/collection3.png", 
-    link: "/collections/paris",
-  },
-  {
-    id: "col4",
-    title: "CITYSCAPES",
-    image: "/images/collection4.png",
-    link: "/collections/cityscapes",
+    id: "1",
+    title: "INTROVERTIDO",
+    image: "/images/jhonycollection.png",
+    link: "/collections",
   },
 ];
 
