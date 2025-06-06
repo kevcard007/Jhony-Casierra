@@ -286,10 +286,10 @@ export default function Home() {
             {/* Print Collection Sets */}
             <AnimatedSection direction="right" delay={0.1}>
               <div className="bg-[#2a2a2a] p-6 border border-[#374151]">
-                <h3 className="font-serif text-lg mb-4 text-white">Conjuntos de colección de impresiones de 3 piezas</h3>
-                <p className="text-sm text-[#9ca3af] mb-4 uppercase tracking-wide">UNA GRAN OPCIÓN PARA EXHIBIR UNA NUEVA SERIE DE IMPRESIONES DE EDICIÓN LIMITADA.</p>
+                <h3 className="font-serif text-lg mb-4 text-white">Colección de obras originales selectas</h3>
+                <p className="text-sm text-[#9ca3af] mb-4 uppercase tracking-wide">UNA OPORTUNIDAD ÚNICA PARA DESCUBRIR NUESTRA NUEVA SERIE DE CREACIONES EXCLUSIVAS.</p>
                 <p className="text-sm text-[#d1d5db] mb-4 leading-relaxed">
-                  Disponemos de una variedad de sets enmarcados que ejemplifican a la perfección los diferentes temas. Jhony se inspira en lugares como Londres, París, Venecia, Nueva York y otros lugares para su icónica colección de grabados.
+                  Disponemos de una variedad de obras enmarcadas que ejemplifican a la perfección los diferentes temas. Jhony se inspira en lugares rodeados de naturaleza y paisajes fascinantes en su tierra natal para su icónica colección de arte original. 
                 </p>
                 <Link href="/galeria" className="inline-block bg-[#fbbf24] text-[#0a0a0a] px-4 py-2 text-sm font-medium hover:bg-[#f59e0b] transition-colors uppercase tracking-wide">LEER MÁS</Link>
               </div>
